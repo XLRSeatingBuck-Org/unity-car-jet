@@ -9,22 +9,6 @@ using UnityEngine.InputSystem.Layouts;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.Utilities;
 
-public struct WheelDeviceState : IInputStateTypeInfo
-{
-	public FourCC format => new("G920");
-
-	[InputControl(name = "Steer", layout = "Axis", offset = 0)]
-	public short Steer;
-
-	[InputControl(name = "Gear 1", layout = "Button", offset = 0, bit = 2)]
-	[InputControl(name = "Gear 2", layout = "Button", offset = 0, bit = 3)]
-	[InputControl(name = "Gear 3", layout = "Button", offset = 0, bit = 4)]
-	[InputControl(name = "Gear 4", layout = "Button", offset = 0, bit = 5)]
-	[InputControl(name = "Gear 5", layout = "Button", offset = 0, bit = 6)]
-	[InputControl(name = "Gear 6", layout = "Button", offset = 0, bit = 7)]
-	public byte Gear;
-}
-
 [InputControlLayout(stateType = typeof(WheelDeviceState))]
 public class WheelDevice : Gamepad
 {
@@ -36,10 +20,42 @@ public class WheelDevice : Gamepad
 	{
 		Debug.Log("registering wheel device");
 
+		InputSystem.RegisterProcessor<RemapProcessor>();
+
 		InputSystem.RegisterLayout<WheelDevice>(
 			matches: new InputDeviceMatcher()
 				.WithInterface("HID")
 				.WithCapability("vendorId", 0x46D)
 				.WithCapability("productId", 0xC262));
 	}
+}
+
+public struct WheelDeviceState : IInputStateTypeInfo
+{
+	public FourCC format => new("G920");
+
+	[InputControl(name = "Steer", layout = "Axis", offset = 0)]
+	public short Steer;
+
+	[InputControl(name = "Clutch", layout = "Axis", offset = 0)]
+	public short Clutch;
+
+	[InputControl(name = "Brake", layout = "Axis", offset = 0)]
+	[InputControl(name = "Gas", layout = "Axis", offset = 0)]
+	public short BrakeGas;
+
+	[InputControl(name = "Gear 1", layout = "Button", offset = 0, bit = 2)]
+	[InputControl(name = "Gear 2", layout = "Button", offset = 0, bit = 3)]
+	[InputControl(name = "Gear 3", layout = "Button", offset = 0, bit = 4)]
+	[InputControl(name = "Gear 4", layout = "Button", offset = 0, bit = 5)]
+	[InputControl(name = "Gear 5", layout = "Button", offset = 0, bit = 6)]
+	[InputControl(name = "Gear 6", layout = "Button", offset = 0, bit = 7)]
+	public byte Gear;
+}
+
+public class RemapProcessor : InputProcessor<float>
+{
+	public float FromA, FromB, ToA, ToB;
+
+	public override float Process(float value, InputControl control) => Mathf.Lerp(ToA, ToB, Mathf.InverseLerp(FromA, FromB, value));
 }

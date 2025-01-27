@@ -492,7 +492,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "7607c7b6-cd76-4816-beef-bd0341cfe950",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -999,7 +999,7 @@
                     "name": "Gas",
                     "type": "Value",
                     "id": "5b920dd7-9042-4e5b-83b3-c03a1037f57f",
-                    "expectedControlType": "",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -1008,19 +1008,73 @@
                     "name": "Brake",
                     "type": "Value",
                     "id": "70f5fc29-9f8f-41da-b113-99ece65ea0d0",
-                    "expectedControlType": "",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Steering",
+                    "name": "Steer",
                     "type": "Value",
                     "id": "58797fdd-6a0e-4fb3-95cc-1454d4c016a4",
-                    "expectedControlType": "",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Gear 1",
+                    "type": "Button",
+                    "id": "497fa4f6-657e-4b3a-b34f-0874490db6bc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Gear 2",
+                    "type": "Button",
+                    "id": "a7a30c86-445f-4182-95d5-ec8d3ff265a5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Gear 3",
+                    "type": "Button",
+                    "id": "15949b42-099e-4267-995b-18e1c156c366",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Gear 4",
+                    "type": "Button",
+                    "id": "230682a2-4ff6-4d3f-b5c4-6fe4d650fbae",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Gear 5",
+                    "type": "Button",
+                    "id": "a62b8a57-3f5f-4f0c-8396-4ea25227f1de",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Gear 6",
+                    "type": "Button",
+                    "id": "8ae891df-b3f3-477e-8343-0c556d03100a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1039,6 +1093,17 @@
                     "name": "",
                     "id": "a3a9ea42-f34b-4405-92ac-272cf2a2f893",
                     "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gas",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "076def14-8251-467c-86f9-745f604653bc",
+                    "path": "<WheelDevice>/Gas",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1069,13 +1134,24 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "2c581325-354a-4fe4-9376-053160c5ac1f",
+                    "path": "<WheelDevice>/Brake",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "Keyboard",
                     "id": "63990872-4bcb-4b3c-9fbe-691cb7aeff00",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Steering",
+                    "action": "Steer",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -1086,7 +1162,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Steering",
+                    "action": "Steer",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -1097,7 +1173,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Steering",
+                    "action": "Steer",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -1108,7 +1184,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Steering",
+                    "action": "Steer",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -1119,9 +1195,152 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Steering",
+                    "action": "Steer",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "1ce88764-4945-480c-8e22-08629f4ead6d",
+                    "path": "<WheelDevice>/Steer",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Steer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "542cf26e-ff39-40b0-b842-f2fddc59f2b5",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "30a35b21-2bb2-46e5-ae9d-c8d602c3de5b",
+                    "path": "<WheelDevice>/Gear 1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6e1cf85e-c2b0-4421-8be1-6ac5a2832664",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4a1b2675-2642-4fe7-9927-230fd3592a68",
+                    "path": "<WheelDevice>/Gear 2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "31c37efe-471b-424b-86a6-c72042233f8a",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "42895a70-2f90-4de5-b61a-4b61a0c6c1f5",
+                    "path": "<WheelDevice>/Gear 3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "24aefd14-bd0f-400e-be0b-e972e9841bbb",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "edf6f39c-7c4d-455c-a6cd-6a812e4f2511",
+                    "path": "<WheelDevice>/Gear 4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8428b708-554c-4715-b4e5-1b60c940bbf0",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5707231b-2616-4db4-8b68-512dd473b1f1",
+                    "path": "<WheelDevice>/Gear 5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 5",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1b70f369-6b3c-40a7-a3f4-bf114edcef8d",
+                    "path": "<Keyboard>/6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 6",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "37f70d5a-304e-43d3-8829-e57eb6f485b3",
+                    "path": "<WheelDevice>/Gear 6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gear 6",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
