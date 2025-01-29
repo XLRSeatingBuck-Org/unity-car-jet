@@ -128,20 +128,13 @@ public class DualShock4GamepadHID : Gamepad
 {
     static DualShock4GamepadHID()
     {
-        // This is one way to match the Device.
-        InputSystem.RegisterLayout<DualShock4GamepadHID>(
-            matches: new InputDeviceMatcher()
-                .WithInterface("HID")
-                .WithManufacturer("Sony.+Entertainment")
-                .WithProduct("Wireless Controller"));
-
         // Alternatively, you can also match by PID and VID, which is generally
         // more reliable for HIDs.
         InputSystem.RegisterLayout<DualShock4GamepadHID>(
             matches: new InputDeviceMatcher()
                 .WithInterface("HID")
-                .WithCapability("vendorId", 0x54C) // Sony Entertainment.
-                .WithCapability("productId", 0x9CC)); // Wireless controller.
+                .WithCapability("vendorId", 0x46D)
+                .WithCapability("productId", 0xC262));
     }
 
     // In the Player, to trigger the calling of the static constructor,
