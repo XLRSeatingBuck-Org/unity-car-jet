@@ -1103,7 +1103,7 @@
                 {
                     "name": "",
                     "id": "076def14-8251-467c-86f9-745f604653bc",
-                    "path": "<WheelDevice>/Gas",
+                    "path": "<LogitechG920>/gas",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1136,7 +1136,7 @@
                 {
                     "name": "",
                     "id": "2c581325-354a-4fe4-9376-053160c5ac1f",
-                    "path": "<WheelDevice>/Brake",
+                    "path": "<LogitechG920>/brake",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1202,7 +1202,7 @@
                 {
                     "name": "",
                     "id": "1ce88764-4945-480c-8e22-08629f4ead6d",
-                    "path": "<WheelDevice>/Steer",
+                    "path": "<LogitechG920>/wheel",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
