@@ -68,18 +68,25 @@ public struct LogitechG920InputReport : IInputStateTypeInfo
     [InputControl(layout = "Button", bit = 0)]
     [FieldOffset(2)] public byte buttons2;
 
+    [InputControl(layout = "Button", bit = 5)]
+    [InputControl(layout = "Button", bit = 4)]
+    [InputControl(layout = "Button", bit = 3)]
+    [InputControl(layout = "Button", bit = 2)]
+    [InputControl(layout = "Button", bit = 1)]
+    [InputControl(layout = "Button", bit = 0)]
     [FieldOffset(3)] public byte gear;
 
+    [InputControl(layout = "Axis", parameters = "normalize,normalizeMin=0,normalizeMax=1,normalizeZero=0.5")]
     [FieldOffset(4)] public ushort wheel;
 
     /// <summary>
     /// 0b11111111 is up
     /// </summary>
-    [InputControl(layout = "Axis")]
+    [InputControl(layout = "Axis", parameters = "normalize,normalizeMin=1,normalizeMax=0,normalizeZero=1")]
     [FieldOffset(6)] public byte gas;
-    [InputControl(layout = "Axis")]
+    [InputControl(layout = "Axis", parameters = "normalize,normalizeMin=1,normalizeMax=0,normalizeZero=1")]
     [FieldOffset(7)] public byte brake;
-    [InputControl(layout = "Axis")]
+    [InputControl(layout = "Axis", parameters = "normalize,normalizeMin=1,normalizeMax=0,normalizeZero=1")]
     [FieldOffset(8)] public byte clutch;
 
     /// <summary>
