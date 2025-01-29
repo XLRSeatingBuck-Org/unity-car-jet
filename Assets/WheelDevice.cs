@@ -58,7 +58,6 @@ public struct LogitechG920InputReport : IInputStateTypeInfo
     [InputControl(name = "dpad/left", format = "BIT", layout = "DiscreteButton", parameters = "minValue=5, maxValue=7", bit = 0, sizeInBits = 4)]
     [FieldOffset(1)] public byte dpad;
 
-    [InputControl(layout = "Button", bit = 7)]
     [InputControl(layout = "Button", bit = 6)]
     [InputControl(layout = "Button", bit = 5)]
     [InputControl(layout = "Button", bit = 4)]
