@@ -1,6 +1,6 @@
 ﻿// https://docs.unity3d.com/Packages/com.unity.inputsystem@1.12/manual/HID.html
-// https://docs.unity3d.com/Packages/com.unity.inputsystem@1.12/manual/Layouts.html
 // https://discussions.unity.com/t/custom-hid-layout-find-which-bits-represent-which-buttons/841149
+// https://docs.unity3d.com/Packages/com.unity.inputsystem@1.12/manual/Layouts.html
 
 /*
  * layout
@@ -29,7 +29,7 @@ using UnityEngine.InputSystem.Utilities;
 // We receive data as raw HID input reports. This struct
 // describes the raw binary format of such a report.
 [StructLayout(LayoutKind.Explicit, Size = 32)]
-public struct DualShock4HIDInputReport : IInputStateTypeInfo
+public struct LogitechG920InputReport : IInputStateTypeInfo
 {
     // Because all HID input reports are tagged with the 'HID ' FourCC,
     // this is the format we need to use for this state struct.
@@ -120,17 +120,17 @@ public struct DualShock4HIDInputReport : IInputStateTypeInfo
 // struct we created, which includes where to find all the InputControl
 // attributes that we placed on there. This is how the Input System knows
 // what controls to create and how to configure them.
-[InputControlLayout(stateType = typeof(DualShock4HIDInputReport))]
+[InputControlLayout(stateType = typeof(LogitechG920InputReport))]
 #if UNITY_EDITOR
 [InitializeOnLoad] // Make sure static constructor is called during startup.
 #endif
-public class DualShock4GamepadHID : Gamepad
+public class LogitechG920 : InputDevice
 {
-    static DualShock4GamepadHID()
+    static LogitechG920()
     {
         // Alternatively, you can also match by PID and VID, which is generally
         // more reliable for HIDs.
-        InputSystem.RegisterLayout<DualShock4GamepadHID>(
+        InputSystem.RegisterLayout<LogitechG920>(
             matches: new InputDeviceMatcher()
                 .WithInterface("HID")
                 .WithCapability("vendorId", 0x46D)
@@ -140,6 +140,5 @@ public class DualShock4GamepadHID : Gamepad
     // In the Player, to trigger the calling of the static constructor,
     // create an empty method annotated with RuntimeInitializeOnLoadMethod.
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    static void Init() {}
+    public static void Init() {}
 }
-
