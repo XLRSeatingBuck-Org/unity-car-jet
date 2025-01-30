@@ -42,10 +42,10 @@ public struct LogitechG920InputReport : IInputStateTypeInfo
     /// </summary>
     [FieldOffset(0)] public byte reportId;
 
-    [InputControl(layout = "Button", bit = 7)]
-    [InputControl(layout = "Button", bit = 6)]
-    [InputControl(layout = "Button", bit = 5)]
-    [InputControl(layout = "Button", bit = 4)]
+    [InputControl(name = "button y", layout = "Button", bit = 7)]
+    [InputControl(name = "button x", layout = "Button", bit = 6)]
+    [InputControl(name = "button b", layout = "Button", bit = 5)]
+    [InputControl(name = "button a", layout = "Button", bit = 4)]
     [FieldOffset(1)] public byte buttons1;
 
     /// <summary>
@@ -58,21 +58,21 @@ public struct LogitechG920InputReport : IInputStateTypeInfo
     [InputControl(name = "dpad/left", format = "BIT", layout = "DiscreteButton", parameters = "minValue=5, maxValue=7", bit = 0, sizeInBits = 4)]
     [FieldOffset(1)] public byte dpad;
 
-    [InputControl(layout = "Button", bit = 6)]
-    [InputControl(layout = "Button", bit = 5)]
-    [InputControl(layout = "Button", bit = 4)]
-    [InputControl(layout = "Button", bit = 3)]
-    [InputControl(layout = "Button", bit = 2)]
-    [InputControl(layout = "Button", bit = 1)]
-    [InputControl(layout = "Button", bit = 0)]
+    [InputControl(name = "button xbox", layout = "Button", bit = 6)]
+    [InputControl(name = "button lsb", layout = "Button", bit = 5)]
+    [InputControl(name = "button rsb", layout = "Button", bit = 4)]
+    [InputControl(name = "button view", layout = "Button", bit = 3)]
+    [InputControl(name = "button menu", layout = "Button", bit = 2)]
+    [InputControl(name = "gear down", layout = "Button", bit = 1)]
+    [InputControl(name = "gear up", layout = "Button", bit = 0)]
     [FieldOffset(2)] public byte buttons2;
 
-    [InputControl(layout = "Button", bit = 5)]
-    [InputControl(layout = "Button", bit = 4)]
-    [InputControl(layout = "Button", bit = 3)]
-    [InputControl(layout = "Button", bit = 2)]
-    [InputControl(layout = "Button", bit = 1)]
-    [InputControl(layout = "Button", bit = 0)]
+    [InputControl(name = "gear r", layout = "Button", bit = 5)]
+    [InputControl(name = "gear 5", layout = "Button", bit = 4)]
+    [InputControl(name = "gear 4", layout = "Button", bit = 3)]
+    [InputControl(name = "gear 3", layout = "Button", bit = 2)]
+    [InputControl(name = "gear 2", layout = "Button", bit = 1)]
+    [InputControl(name = "gear 1", layout = "Button", bit = 0)]
     [FieldOffset(3)] public byte gear;
 
     [InputControl(layout = "Axis", parameters = "normalize,normalizeMin=0,normalizeMax=1,normalizeZero=0.5")]
