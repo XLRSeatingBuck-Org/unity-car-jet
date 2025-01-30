@@ -1068,7 +1068,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Gear 6",
+                    "name": "Gear R",
                     "type": "Button",
                     "id": "8ae891df-b3f3-477e-8343-0c556d03100a",
                     "expectedControlType": "",
@@ -1224,7 +1224,7 @@
                 {
                     "name": "",
                     "id": "30a35b21-2bb2-46e5-ae9d-c8d602c3de5b",
-                    "path": "<WheelDevice>/Gear 1",
+                    "path": "<LogitechG920>/gear 1",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1246,7 +1246,7 @@
                 {
                     "name": "",
                     "id": "4a1b2675-2642-4fe7-9927-230fd3592a68",
-                    "path": "<WheelDevice>/Gear 2",
+                    "path": "<LogitechG920>/gear 2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1268,7 +1268,7 @@
                 {
                     "name": "",
                     "id": "42895a70-2f90-4de5-b61a-4b61a0c6c1f5",
-                    "path": "<WheelDevice>/Gear 3",
+                    "path": "<LogitechG920>/gear 3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1290,7 +1290,7 @@
                 {
                     "name": "",
                     "id": "edf6f39c-7c4d-455c-a6cd-6a812e4f2511",
-                    "path": "<WheelDevice>/Gear 4",
+                    "path": "<LogitechG920>/gear 4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1312,7 +1312,7 @@
                 {
                     "name": "",
                     "id": "5707231b-2616-4db4-8b68-512dd473b1f1",
-                    "path": "<WheelDevice>/Gear 5",
+                    "path": "<LogitechG920>/gear 5",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1327,18 +1327,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Gear 6",
+                    "action": "Gear R",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "37f70d5a-304e-43d3-8829-e57eb6f485b3",
-                    "path": "<WheelDevice>/Gear 6",
+                    "path": "<LogitechG920>/gear r",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Gear 6",
+                    "action": "Gear R",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
