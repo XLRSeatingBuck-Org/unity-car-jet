@@ -587,11 +587,11 @@ Transform:
   m_GameObject: {fileID: 534669902}
   serializedVersion: 2
   m_LocalRotation: {x: 0.1353897, y: 0.058665913, z: 0.029610865, w: 0.98861074}
-  m_LocalPosition: {x: 17.46, y: 7.56, z: 133.66}
+  m_LocalPosition: {x: -0.19000053, y: 6.86, z: -11.459991}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1120642341}
   m_LocalEulerAnglesHint: {x: 15.321, y: 7.388, z: 4.426}
 --- !u!114 &534669906
 MonoBehaviour:
@@ -796,6 +796,47 @@ MonoBehaviour:
   GasInput: {fileID: -739564202947978770, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   BrakeInput: {fileID: 8228473535295160742, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   SteerInput: {fileID: 6313851958674310264, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  LeftFront: {fileID: 605695519}
+  RightFront: {fileID: 1422648058}
+  LeftBack: {fileID: 1270306246}
+  RightBack: {fileID: 740004910}
+  GasTorque: 10000
+  BrakeTorque: 10000
+--- !u!4 &1120642341 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 489324, guid: aea2a6cdcc9d7944090d528486ebaee1, type: 3}
+  m_PrefabInstance: {fileID: 1975493791}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1120642342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120642335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Car
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1270306241 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 121858, guid: aea2a6cdcc9d7944090d528486ebaee1, type: 3}
@@ -1348,7 +1389,10 @@ PrefabInstance:
     - {fileID: 1877536999, guid: aea2a6cdcc9d7944090d528486ebaee1, type: 3}
     - {fileID: 53165407, guid: aea2a6cdcc9d7944090d528486ebaee1, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 489324, guid: aea2a6cdcc9d7944090d528486ebaee1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 534669905}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 104122, guid: aea2a6cdcc9d7944090d528486ebaee1, type: 3}
       insertIndex: -1
@@ -1356,6 +1400,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 104122, guid: aea2a6cdcc9d7944090d528486ebaee1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1120642336}
+    - targetCorrespondingSourceObject: {fileID: 104122, guid: aea2a6cdcc9d7944090d528486ebaee1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1120642342}
     - targetCorrespondingSourceObject: {fileID: 102266, guid: aea2a6cdcc9d7944090d528486ebaee1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 605695519}
@@ -1528,7 +1575,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 534669905}
   - {fileID: 170076735}
   - {fileID: 1385500138}
   - {fileID: 1975493791}
