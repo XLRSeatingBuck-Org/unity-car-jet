@@ -8,7 +8,7 @@ public class CarMovement : MonoBehaviour
 
 	public WheelCollider LeftFront, RightFront, LeftBack, RightBack;
 
-	public float GasTorque, BrakeTorque;
+	public float GasTorque, BrakeTorque, SteerAngle;
 
 	private void Awake()
 	{
@@ -31,5 +31,8 @@ public class CarMovement : MonoBehaviour
 		RightBack.brakeTorque = brake * BrakeTorque;
 		LeftFront.brakeTorque = brake * BrakeTorque;
 		RightFront.brakeTorque = brake * BrakeTorque;
+
+		RightFront.steerAngle = steer * SteerAngle;
+		LeftFront.steerAngle = steer * SteerAngle;
 	}
 }

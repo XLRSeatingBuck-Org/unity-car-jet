@@ -774,7 +774,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
+  m_ImplicitCom: 0
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -800,8 +800,9 @@ MonoBehaviour:
   RightFront: {fileID: 1422648058}
   LeftBack: {fileID: 1270306246}
   RightBack: {fileID: 740004910}
-  GasTorque: 10000
-  BrakeTorque: 10000
+  GasTorque: 100000
+  BrakeTorque: 10000000
+  SteerAngle: 100
 --- !u!4 &1120642341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 489324, guid: aea2a6cdcc9d7944090d528486ebaee1, type: 3}
