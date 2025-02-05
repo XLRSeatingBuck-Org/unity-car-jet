@@ -14,7 +14,9 @@ public class CarMovement : MonoBehaviour
 	{
 		// pair the custom device with the default user to so that inputs are registered
 		// theres probably a better way of doing this :P
-		InputUser.PerformPairingWithDevice(InputSystem.GetDevice("LogitechG920"), InputUser.all[0]);
+		var wheelDevice = InputSystem.GetDevice("LogitechG920");
+		if (wheelDevice != null)
+			InputUser.PerformPairingWithDevice(wheelDevice, InputUser.all[0]);
 	}
 
 	private void FixedUpdate()
