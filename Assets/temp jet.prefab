@@ -366,7 +366,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1000
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -376,7 +376,7 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 0
+  m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -408,7 +408,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
@@ -428,7 +428,7 @@ MonoBehaviour:
   Body: {fileID: 2317255137595320214}
   ThrottleAmount: 10000
   TurnAmount: 1000
-  LiftAmount: 100
+  LiftAmount: 10
   Throttle: {fileID: 2504925546097697161, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   Pitch: {fileID: 5337287639880034775, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   Yaw: {fileID: -2189456482110432296, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -1134,11 +1134,11 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 10000
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
