@@ -1555,6 +1555,32 @@
                     "isOR": false
                 }
             ]
+        },
+        {
+            "name": "Jet",
+            "bindingGroup": "Jet",
+            "devices": [
+                {
+                    "devicePath": "<HID::Thrustmaster Throttle - HOTAS Warthog>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<HID::Thustmaster Joystick - HOTAS Warthog>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<HID::Saitek Saitek Pro Flight Rudder Pedals>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Car",
+            "bindingGroup": "Car",
+            "devices": []
         }
     ]
 }
