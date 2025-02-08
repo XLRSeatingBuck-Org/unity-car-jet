@@ -1385,15 +1385,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Pedal",
-                    "type": "Value",
-                    "id": "6a467991-dec9-4c40-a270-91ee6c078747",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "Brake",
                     "type": "Value",
                     "id": "df2840a9-4287-4267-a917-0569fab4f0de",
@@ -1456,17 +1447,6 @@
                     "processors": "Invert",
                     "groups": "",
                     "action": "Roll",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fa00d476-3958-418d-9d98-6e334793a02b",
-                    "path": "<HID::Saitek Saitek Pro Flight Rudder Pedals>/rz",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Pedal",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -26,7 +26,7 @@ public class JetMovement : MonoBehaviour
 		{
 			var forwardVelocity = Vector3.Project(Body.GetPointVelocity(transform.position), transform.forward);
 			var liftForce = Vector3.Cross(forwardVelocity, transform.right) * LiftAmount;
-			Body.AddForceAtPosition(liftForce, transform.position);
+			Body.AddForce(liftForce);
 		}
 	}
 
