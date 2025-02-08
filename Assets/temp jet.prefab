@@ -426,10 +426,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Body: {fileID: 2317255137595320214}
-  ThrottleAmount: 100
+  ThrottleAmount: 10000
+  TurnAmount: 1000
   LiftAmount: 100
   Throttle: {fileID: 2504925546097697161, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  Stick: {fileID: 5337287639880034775, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  Pitch: {fileID: 5337287639880034775, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  Yaw: {fileID: -2189456482110432296, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  Roll: {fileID: -1182068869066066769, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &6139867634395882220
 GameObject:
   m_ObjectHideFlags: 0

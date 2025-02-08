@@ -1358,10 +1358,28 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Flight Stick",
+                    "name": "Pitch",
                     "type": "Value",
                     "id": "8f2ed518-568b-40d5-8872-d9ffa09c2fa1",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Yaw",
+                    "type": "Value",
+                    "id": "e0ed900f-094d-49fe-a41d-a4fa0bfdd6b6",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Roll",
+                    "type": "Value",
+                    "id": "693fca8c-fe8a-4c7b-8f8a-ad015245251a",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -1388,10 +1406,10 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "013645c8-6239-4b36-b2cc-a5b4edb2fa03",
-                    "path": "<HID::Thrustmaster Throttle - HOTAS Warthog>/z",
+                    "id": "9de2c12a-fa66-425b-a7e8-9eba75ec497b",
+                    "path": "<HID::Thrustmaster Throttle - HOTAS Warthog>/rz",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Normalize(min=1,max=-1)",
                     "groups": "",
                     "action": "Throttle",
                     "isComposite": false,
@@ -1399,10 +1417,10 @@
                 },
                 {
                     "name": "",
-                    "id": "9de2c12a-fa66-425b-a7e8-9eba75ec497b",
-                    "path": "<HID::Thrustmaster Throttle - HOTAS Warthog>/rz",
+                    "id": "5f6fe0c4-c2eb-4f6c-8379-1e8e2f4046d0",
+                    "path": "<HID::Thrustmaster Throttle - HOTAS Warthog>/z",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Normalize(min=1,max=-1)",
                     "groups": "",
                     "action": "Throttle",
                     "isComposite": false,
@@ -1411,11 +1429,33 @@
                 {
                     "name": "",
                     "id": "5c12b2aa-1ddc-4d76-8ee4-c39d1dfa4fcb",
-                    "path": "<HID::Thustmaster Joystick - HOTAS Warthog>/stick",
+                    "path": "<HID::Thustmaster Joystick - HOTAS Warthog>/stick/y",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Flight Stick",
+                    "action": "Pitch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a4d37388-817f-4bf4-b090-72c432302b30",
+                    "path": "<HID::Saitek Saitek Pro Flight Rudder Pedals>/rz",
+                    "interactions": "",
+                    "processors": "Invert",
+                    "groups": "",
+                    "action": "Yaw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "392ba62b-66be-439d-90ac-16c00d0b94a6",
+                    "path": "<HID::Thustmaster Joystick - HOTAS Warthog>/stick/x",
+                    "interactions": "",
+                    "processors": "Invert",
+                    "groups": "",
+                    "action": "Roll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -1432,8 +1472,8 @@
                 },
                 {
                     "name": "",
-                    "id": "4453af98-08d5-4c84-b254-64bb1a0d2e8a",
-                    "path": "<Joystick>/stick/y",
+                    "id": "151dc499-4d73-4c6a-91e6-4ec1f43ca91b",
+                    "path": "<HID::Saitek Saitek Pro Flight Rudder Pedals>/stick/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1443,8 +1483,8 @@
                 },
                 {
                     "name": "",
-                    "id": "151dc499-4d73-4c6a-91e6-4ec1f43ca91b",
-                    "path": "<Joystick>/stick/x",
+                    "id": "5b5da538-07dc-4b22-a9d9-0bb20300b6a9",
+                    "path": "<HID::Saitek Saitek Pro Flight Rudder Pedals>/stick/y",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

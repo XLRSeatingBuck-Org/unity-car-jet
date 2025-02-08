@@ -5,26 +5,28 @@ public class JetMovement : MonoBehaviour
 {
 	public Rigidbody Body;
 
-	public float ThrottleAmount, LiftAmount;
+	public float ThrottleAmount, TurnAmount, LiftAmount;
 
-	public InputActionReference Throttle, Stick;
+	public InputActionReference Throttle, Pitch, Yaw, Roll;
 
 	private void Update()
 	{
-		var throttle = Throttle.action.ReadValue<float>();
-		var stick = Stick.action.ReadValue<Vector2>();
-		Debug.Log($"throttle = {throttle}, stick = {stick}");
-
 		{
+			var throttle = Throttle.action.ReadValue<float>();
+			var pitch = Pitch.action.ReadValue<float>();
+			var yaw = Yaw.action.ReadValue<float>();
+			var roll = Roll.action.ReadValue<float>();
+
 			Body.AddForce(transform.forward * throttle * ThrottleAmount);
+			Body.AddTorque(transform.right * pitch * TurnAmount);
+			Body.AddTorque(transform.up * yaw * TurnAmount);
+			Body.AddTorque(transform.forward * roll * TurnAmount);
 		}
 
-		if (false)
 		{
 			var forwardVelocity = Vector3.Project(Body.GetPointVelocity(transform.position), transform.forward);
 			var liftForce = Vector3.Cross(forwardVelocity, transform.right) * LiftAmount;
 			Body.AddForceAtPosition(liftForce, transform.position);
-			Debug.Log($"forward = {forwardVelocity.magnitude}\t|\tlift = {liftForce.magnitude}");
 		}
 	}
 
@@ -36,5 +38,18 @@ public class JetMovement : MonoBehaviour
 		Gizmos.DrawLine(transform.position, transform.position + forwardVelocity);
 		Gizmos.color = Color.green;
 		Gizmos.DrawLine(transform.position, transform.position + liftForce);
+	}
+
+	private void OnGUI()
+	{
+		var throttle = Throttle.action.ReadValue<float>();
+		var pitch = Pitch.action.ReadValue<float>();
+		var yaw = Yaw.action.ReadValue<float>();
+		var roll = Roll.action.ReadValue<float>();
+		GUILayout.Label($"throttle = {throttle} \t pitch = {pitch} \t yaw = {yaw} \t roll = {roll}");
+
+		var forwardVelocity = Vector3.Project(Body.GetPointVelocity(transform.position), transform.forward);
+		var liftForce = Vector3.Cross(forwardVelocity, transform.right) * LiftAmount;
+		GUILayout.Label($"forward = {forwardVelocity.magnitude} \t lift = {liftForce.magnitude}");
 	}
 }
