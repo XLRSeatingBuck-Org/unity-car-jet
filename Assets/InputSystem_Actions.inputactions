@@ -1343,6 +1343,116 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Jet",
+            "id": "1e7453b1-dc7c-4ec8-ba68-b4059bb73c44",
+            "actions": [
+                {
+                    "name": "Throttle",
+                    "type": "Value",
+                    "id": "860305a4-9037-42f3-8414-8b153b81fb40",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Flight Stick",
+                    "type": "Value",
+                    "id": "8f2ed518-568b-40d5-8872-d9ffa09c2fa1",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Pedal",
+                    "type": "Value",
+                    "id": "6a467991-dec9-4c40-a270-91ee6c078747",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Brake",
+                    "type": "Value",
+                    "id": "df2840a9-4287-4267-a917-0569fab4f0de",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "013645c8-6239-4b36-b2cc-a5b4edb2fa03",
+                    "path": "<HID::Thrustmaster Throttle - HOTAS Warthog>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throttle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9de2c12a-fa66-425b-a7e8-9eba75ec497b",
+                    "path": "<HID::Thrustmaster Throttle - HOTAS Warthog>/rz",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throttle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5c12b2aa-1ddc-4d76-8ee4-c39d1dfa4fcb",
+                    "path": "<HID::Thustmaster Joystick - HOTAS Warthog>/stick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flight Stick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fa00d476-3958-418d-9d98-6e334793a02b",
+                    "path": "<HID::Saitek Saitek Pro Flight Rudder Pedals>/rz",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pedal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4453af98-08d5-4c84-b254-64bb1a0d2e8a",
+                    "path": "<Joystick>/stick/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "151dc499-4d73-4c6a-91e6-4ec1f43ca91b",
+                    "path": "<Joystick>/stick/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
