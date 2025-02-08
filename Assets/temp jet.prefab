@@ -425,6 +425,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbbbd7a09608472ba4849f8128bfa961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Body: {fileID: 2317255137595320214}
+  ThrottleAmount: 100
+  LiftAmount: 100
+  Throttle: {fileID: 2504925546097697161, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  Stick: {fileID: 5337287639880034775, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &6139867634395882220
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,7 +969,6 @@ GameObject:
   - component: {fileID: 8248568370083930185}
   - component: {fileID: 41890879829396280}
   - component: {fileID: 3975085754867866538}
-  - component: {fileID: 4914514484784826839}
   m_Layer: 0
   m_Name: wing
   m_TagString: Untagged
@@ -1061,20 +1065,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4914514484784826839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7628557182909633889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f915076afa44b7ca1b32e76d7e57d55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Body: {fileID: 2317255137595320214}
-  LiftAmount: 100
 --- !u!1 &8387468410286148110
 GameObject:
   m_ObjectHideFlags: 0
