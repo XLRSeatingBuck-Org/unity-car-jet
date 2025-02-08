@@ -1580,7 +1580,13 @@
         {
             "name": "Car",
             "bindingGroup": "Car",
-            "devices": []
+            "devices": [
+                {
+                    "devicePath": "<LogitechG920>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
         }
     ]
 }
