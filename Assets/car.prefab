@@ -717,7 +717,7 @@ MonoBehaviour:
   RightBack: {fileID: 1057494946909100755}
   GasTorque: 100000
   BrakeTorque: 10000000
-  SteerAngle: 100
+  SteerAngle: 30
 --- !u!114 &4970510340518190489
 MonoBehaviour:
   m_ObjectHideFlags: 0

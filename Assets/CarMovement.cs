@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Users;
 
 public class CarMovement : MonoBehaviour
 {
@@ -9,13 +8,6 @@ public class CarMovement : MonoBehaviour
 	public WheelCollider LeftFront, RightFront, LeftBack, RightBack;
 
 	public float GasTorque, BrakeTorque, SteerAngle;
-
-	private void Awake()
-	{
-		// pair the custom device with the default user to so that inputs are registered
-		// theres probably a better way of doing this :P
-		InputUser.PerformPairingWithDevice(InputSystem.GetDevice("LogitechG920"), InputUser.all[0]);
-	}
 
 	private void FixedUpdate()
 	{
