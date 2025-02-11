@@ -711,6 +711,7 @@ MonoBehaviour:
   GasInput: {fileID: -739564202947978770, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   BrakeInput: {fileID: 8228473535295160742, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   SteerInput: {fileID: 6313851958674310264, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  Body: {fileID: 7495443279060062592}
   LeftFront: {fileID: 2716459193614891142}
   RightFront: {fileID: 4795950753765878369}
   LeftBack: {fileID: 3145262460232535540}
