@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 394579438}
   - component: {fileID: 394579439}
   m_Layer: 0
-  m_Name: loading plane
+  m_Name: runway plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,13 +144,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394579437}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 0.1, z: 100}
+  m_LocalRotation: {x: 0, y: -0.5158606, z: 0, w: 0.8566726}
+  m_LocalPosition: {x: 1.1, y: 0, z: 2}
+  m_LocalScale: {x: 92.583, y: 0.1, z: 2632.742}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1165762253}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -62.11, z: 0}
 --- !u!65 &394579439
 BoxCollider:
   m_ObjectHideFlags: 0

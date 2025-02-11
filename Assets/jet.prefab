@@ -66,7 +66,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 10000
+  far clip plane: 100000
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -243,9 +243,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Body: {fileID: 8426507936656334835}
-  ThrottleAmount: 3000
-  TurnAmount: 1000
-  LiftAmount: 10
+  ThrottleAmount: 100000
+  TurnAmount: 10000
+  LiftAmount: 100
   Throttle: {fileID: 2504925546097697161, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   Pitch: {fileID: 5337287639880034775, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   Yaw: {fileID: -2189456482110432296, guid: 052faaac586de48259a63d0c4782560b, type: 3}

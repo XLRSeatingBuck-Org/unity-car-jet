@@ -36,13 +36,13 @@ public class JetMovement : MonoBehaviour
 		var pitch = Pitch.action.ReadValue<float>();
 		var yaw = Yaw.action.ReadValue<float>();
 		var roll = Roll.action.ReadValue<float>();
-		GUILayout.Label($"throttle = {throttle} \t pitch = {pitch} \t yaw = {yaw} \t roll = {roll}");
+		GUILayout.Label($"throttle = {throttle}\npitch = {pitch}\nyaw = {yaw}\nroll = {roll}");
 
 		var localForwardSpeed = Vector3.Project(Body.linearVelocity, transform.forward).magnitude;
 		var liftForce = transform.up * Mathf.Max(0, localForwardSpeed * LiftAmount);
-		GUILayout.Label($"forward = {localForwardSpeed} \t lift = {liftForce.magnitude}");
+		GUILayout.Label($"forward = {localForwardSpeed}\nlift = {liftForce.magnitude}");
 
-		var globalDownwardSpeed = Mathf.Max(0, -Body.linearVelocity.y);
-		GUILayout.Label($"downward speed = {globalDownwardSpeed}");
+		GUILayout.Label($"velocity = {Body.linearVelocity} / {transform.InverseTransformDirection(Body.linearVelocity)}\n" +
+			$"angular velocity = {Body.angularVelocity} / {transform.InverseTransformDirection(Body.angularVelocity)}");
 	}
 }
