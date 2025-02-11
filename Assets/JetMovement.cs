@@ -9,7 +9,7 @@ public class JetMovement : MonoBehaviour
 
 	public InputActionReference Throttle, Pitch, Yaw, Roll;
 
-	private void Update()
+	private void FixedUpdate()
 	{
 		{
 			var throttle = Throttle.action.ReadValue<float>();
