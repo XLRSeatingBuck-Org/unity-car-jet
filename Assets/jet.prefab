@@ -355,7 +355,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7452880917313083662, guid: 0a4e6b2ba4aa2764f88cdc02785ec6ad, type: 3}
 --- !u!1 &435957987173337137 stripped
@@ -382,7 +382,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7477262659783024682, guid: 0a4e6b2ba4aa2764f88cdc02785ec6ad, type: 3}
 --- !u!1 &644908440935786699 stripped
@@ -409,7 +409,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6691889099990313608, guid: 0a4e6b2ba4aa2764f88cdc02785ec6ad, type: 3}
 --- !u!1 &2595595826157799526 stripped
@@ -436,7 +436,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5479831315062455548, guid: 0a4e6b2ba4aa2764f88cdc02785ec6ad, type: 3}
 --- !u!1 &3725221362788976491 stripped
@@ -463,7 +463,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7133086528946006701, guid: 0a4e6b2ba4aa2764f88cdc02785ec6ad, type: 3}
 --- !u!1 &5641952681991769015 stripped
@@ -490,7 +490,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 5522539229296949847, guid: 0a4e6b2ba4aa2764f88cdc02785ec6ad, type: 3}
 --- !u!1 &6612322380850054755 stripped
@@ -517,7 +517,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5728624568052706071, guid: 0a4e6b2ba4aa2764f88cdc02785ec6ad, type: 3}
 --- !u!4 &7668259229247359012 stripped
@@ -549,6 +549,6 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1178279977304103984, guid: 0a4e6b2ba4aa2764f88cdc02785ec6ad, type: 3}
