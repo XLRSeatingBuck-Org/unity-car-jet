@@ -24,20 +24,10 @@ public class JetMovement : MonoBehaviour
 		}
 
 		{
-			var forwardVelocity = Vector3.Project(Body.GetPointVelocity(transform.position), transform.forward);
-			var liftForce = Vector3.Cross(forwardVelocity, transform.right) * LiftAmount;
+			var localForwardSpeed = Vector3.Project(Body.linearVelocity, transform.forward).magnitude;
+			var liftForce = transform.up * Mathf.Max(0, localForwardSpeed * LiftAmount);
 			Body.AddForce(liftForce);
 		}
-	}
-
-	private void OnDrawGizmos()
-	{
-		var forwardVelocity = Vector3.Project(Body.GetPointVelocity(transform.position), transform.forward);
-		var liftForce = Vector3.Cross(forwardVelocity, transform.right) * LiftAmount;
-		Gizmos.color = Color.red;
-		Gizmos.DrawLine(transform.position, transform.position + forwardVelocity);
-		Gizmos.color = Color.green;
-		Gizmos.DrawLine(transform.position, transform.position + liftForce);
 	}
 
 	private void OnGUI()
@@ -48,8 +38,11 @@ public class JetMovement : MonoBehaviour
 		var roll = Roll.action.ReadValue<float>();
 		GUILayout.Label($"throttle = {throttle} \t pitch = {pitch} \t yaw = {yaw} \t roll = {roll}");
 
-		var forwardVelocity = Vector3.Project(Body.GetPointVelocity(transform.position), transform.forward);
-		var liftForce = Vector3.Cross(forwardVelocity, transform.right) * LiftAmount;
-		GUILayout.Label($"forward = {forwardVelocity.magnitude} \t lift = {liftForce.magnitude}");
+		var localForwardSpeed = Vector3.Project(Body.linearVelocity, transform.forward).magnitude;
+		var liftForce = transform.up * Mathf.Max(0, localForwardSpeed * LiftAmount);
+		GUILayout.Label($"forward = {localForwardSpeed} \t lift = {liftForce.magnitude}");
+
+		var globalDownwardSpeed = Mathf.Max(0, -Body.linearVelocity.y);
+		GUILayout.Label($"downward speed = {globalDownwardSpeed}");
 	}
 }
