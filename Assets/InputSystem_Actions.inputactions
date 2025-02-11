@@ -1014,6 +1014,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Clutch",
+                    "type": "Value",
+                    "id": "2745dcd7-f0de-4013-a2c5-ad24a67135bb",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Steer",
                     "type": "Value",
                     "id": "58797fdd-6a0e-4fb3-95cc-1454d4c016a4",
@@ -1068,6 +1077,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Gear 6",
+                    "type": "Button",
+                    "id": "acd10b18-a1e0-40c0-aa00-cf8896a52c8d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Gear R",
                     "type": "Button",
                     "id": "8ae891df-b3f3-477e-8343-0c556d03100a",
@@ -1103,9 +1121,9 @@
                 {
                     "name": "",
                     "id": "076def14-8251-467c-86f9-745f604653bc",
-                    "path": "<LogitechG920>/gas",
+                    "path": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>/stick/y",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Normalize(min=-1,max=1,zero=-1)",
                     "groups": ";Car",
                     "action": "Gas",
                     "isComposite": false,
@@ -1136,11 +1154,33 @@
                 {
                     "name": "",
                     "id": "2c581325-354a-4fe4-9376-053160c5ac1f",
-                    "path": "<LogitechG920>/brake",
+                    "path": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>/z",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "Normalize(min=1)",
                     "groups": ";Car",
                     "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e3028238-7d59-4eb7-8f46-38377ecc87bc",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Clutch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0eaaff49-3a3e-4bba-b066-6177c97c277f",
+                    "path": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>/rz",
+                    "interactions": "",
+                    "processors": "Normalize(min=1,zero=1)",
+                    "groups": ";Car",
+                    "action": "Clutch",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -1202,7 +1242,7 @@
                 {
                     "name": "",
                     "id": "1ce88764-4945-480c-8e22-08629f4ead6d",
-                    "path": "<LogitechG920>/wheel",
+                    "path": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>/stick/x",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Car",
@@ -1224,7 +1264,7 @@
                 {
                     "name": "",
                     "id": "30a35b21-2bb2-46e5-ae9d-c8d602c3de5b",
-                    "path": "<LogitechG920>/gear 1",
+                    "path": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>/button13",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Car",
@@ -1246,7 +1286,7 @@
                 {
                     "name": "",
                     "id": "4a1b2675-2642-4fe7-9927-230fd3592a68",
-                    "path": "<LogitechG920>/gear 2",
+                    "path": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>/button14",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Car",
@@ -1268,7 +1308,7 @@
                 {
                     "name": "",
                     "id": "42895a70-2f90-4de5-b61a-4b61a0c6c1f5",
-                    "path": "<LogitechG920>/gear 3",
+                    "path": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>/button15",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Car",
@@ -1290,7 +1330,7 @@
                 {
                     "name": "",
                     "id": "edf6f39c-7c4d-455c-a6cd-6a812e4f2511",
-                    "path": "<LogitechG920>/gear 4",
+                    "path": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>/button16",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Car",
@@ -1312,7 +1352,7 @@
                 {
                     "name": "",
                     "id": "5707231b-2616-4db4-8b68-512dd473b1f1",
-                    "path": "<LogitechG920>/gear 5",
+                    "path": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>/button17",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Car",
@@ -1322,8 +1362,30 @@
                 },
                 {
                     "name": "",
-                    "id": "1b70f369-6b3c-40a7-a3f4-bf114edcef8d",
+                    "id": "a885af16-063e-4607-959e-0c692fc0c5d9",
                     "path": "<Keyboard>/6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Gear 6",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7398565d-a475-44ae-a39b-61eb39916d76",
+                    "path": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>/button18",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Car",
+                    "action": "Gear 6",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1b70f369-6b3c-40a7-a3f4-bf114edcef8d",
+                    "path": "<Keyboard>/7",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -1334,7 +1396,7 @@
                 {
                     "name": "",
                     "id": "37f70d5a-304e-43d3-8829-e57eb6f485b3",
-                    "path": "<LogitechG920>/gear r",
+                    "path": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>/button12",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Car",
@@ -1400,7 +1462,7 @@
                     "id": "9de2c12a-fa66-425b-a7e8-9eba75ec497b",
                     "path": "<HID::Thrustmaster Throttle - HOTAS Warthog>/rz",
                     "interactions": "",
-                    "processors": "Normalize(min=1,max=-1)",
+                    "processors": "Normalize(min=1,max=-1,zero=1)",
                     "groups": ";Jet",
                     "action": "Throttle",
                     "isComposite": false,
@@ -1411,7 +1473,7 @@
                     "id": "5f6fe0c4-c2eb-4f6c-8379-1e8e2f4046d0",
                     "path": "<HID::Thrustmaster Throttle - HOTAS Warthog>/z",
                     "interactions": "",
-                    "processors": "Normalize(min=1,max=-1)",
+                    "processors": "Normalize(min=1,max=-1,zero=1)",
                     "groups": ";Jet",
                     "action": "Throttle",
                     "isComposite": false,
@@ -1716,7 +1778,7 @@
             "bindingGroup": "Car",
             "devices": [
                 {
-                    "devicePath": "<LogitechG920>",
+                    "devicePath": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>",
                     "isOptional": false,
                     "isOR": false
                 }
