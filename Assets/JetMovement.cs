@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Bhaptics.SDK2;
+using System.Linq;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class JetMovement : MonoBehaviour
@@ -8,6 +10,8 @@ public class JetMovement : MonoBehaviour
 	public float ThrottleAmount, TurnAmount, LiftAmount;
 
 	public InputActionReference Throttle, Pitch, Yaw, Roll;
+
+	public AnimationCurve MotorPowerCurve;
 
 	private void FixedUpdate()
 	{
@@ -23,10 +27,17 @@ public class JetMovement : MonoBehaviour
 			Body.AddTorque(transform.forward * roll * TurnAmount);
 		}
 
+		var localForwardSpeed = Vector3.Project(Body.linearVelocity, transform.forward).magnitude;
 		{
-			var localForwardSpeed = Vector3.Project(Body.linearVelocity, transform.forward).magnitude;
 			var liftForce = transform.up * Mathf.Max(0, localForwardSpeed * LiftAmount);
 			Body.AddForce(liftForce);
+		}
+
+		{
+			var motorPower = Mathf.RoundToInt(MotorPowerCurve.Evaluate(localForwardSpeed));
+			BhapticsLibrary.PlayMotors((int)PositionType.GloveL, Enumerable.Repeat(motorPower, 6).ToArray(), 100);
+			BhapticsLibrary.PlayMotors((int)PositionType.GloveR, Enumerable.Repeat(motorPower, 6).ToArray(), 100);
+			BhapticsLibrary.PlayMotors((int)PositionType.Vest, Enumerable.Repeat(motorPower, 32).ToArray(), 100);
 		}
 	}
 
@@ -44,5 +55,8 @@ public class JetMovement : MonoBehaviour
 
 		GUILayout.Label($"velocity = {Body.linearVelocity} / {transform.InverseTransformDirection(Body.linearVelocity)}\n" +
 			$"angular velocity = {Body.angularVelocity} / {transform.InverseTransformDirection(Body.angularVelocity)}");
+
+		var motorPower = Mathf.RoundToInt(MotorPowerCurve.Evaluate(localForwardSpeed));
+		GUILayout.Label($"motor power = {motorPower}");
 	}
 }
