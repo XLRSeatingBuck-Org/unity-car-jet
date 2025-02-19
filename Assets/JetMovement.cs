@@ -41,6 +41,11 @@ public class JetMovement : MonoBehaviour
 		}
 	}
 
+	public void OnImpact(Vector3 impulse)
+	{
+		Debug.Log($"impact! {impulse}");
+	}
+
 	private void OnGUI()
 	{
 		var throttle = Throttle.action.ReadValue<float>();
