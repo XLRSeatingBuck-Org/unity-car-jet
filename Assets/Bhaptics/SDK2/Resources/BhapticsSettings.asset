@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3b9d9689fae93418e33472f9eccaa7, type: 3}
+  m_Name: BhapticsSettings
+  m_EditorClassIdentifier: 
+  appName: unity-car-jet
+  appId: 67b546cc67bca828fb1005bb
+  apiKey: DSdNDqsl4q4LFZxmYopY
+  lastDeployVersion: 1
+  eventData:
+  - durationMillis: 0
+    key: game_start
+    description: 
+    isAudio: 0
+    updateTime: 1739933476390
+    positions: []
+  defaultDeploy: '{"status":true,"message":{"id":"67b5472c67bca828fb100962","createTime":1739933484829,"name":"unity-car-jet","creator":"42MzPaEODCSofk83cUyw9ObNFnX2","workspaceId":"67b546cc67bca828fb1005bb","version":1,"disableValidation":false,"hapticMappings":[{"id":"67b5472c67bca828fb100963","deployId":"67b5472c67bca828fb100962","enable":true,"intensity":100,"key":"game_start","category":"Action","description":"","updateTime":1739933476390,"tactFilePatterns":[],"audioFilePatterns":[],"eventTime":0}],"categoryOptions":["Action"],"description":""},"errorMessage":null,"timestamp":1739933498816,"code":200}'

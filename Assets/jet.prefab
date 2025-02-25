@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_Actions: {fileID: 0}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -250,6 +250,55 @@ MonoBehaviour:
   Pitch: {fileID: 5337287639880034775, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   Yaw: {fileID: -2189456482110432296, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   Roll: {fileID: -1182068869066066769, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  SpeedToMotorPowerCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 200
+      value: 50.035202
+      inSlope: 0.82561874
+      outSlope: 0.82561874
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.2679814
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ImpulseToMotorPowerCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.001
+      outSlope: 0.001
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100000
+      value: 100
+      inSlope: 0.001
+      outSlope: 0.001
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ImpulseMotorDuration: 200
 --- !u!1001 &7917777129832132559
 PrefabInstance:
   m_ObjectHideFlags: 0
