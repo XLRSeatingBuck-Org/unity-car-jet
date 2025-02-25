@@ -11,7 +11,8 @@ public class JetMovement : MonoBehaviour
 
 	public InputActionReference Throttle, Pitch, Yaw, Roll;
 
-	public AnimationCurve MotorPowerCurve;
+	public AnimationCurve SpeedToMotorPowerCurve, ImpulseToMotorPowerCurve;
+	public int ImpulseMotorDuration;
 
 	private void FixedUpdate()
 	{
@@ -34,16 +35,23 @@ public class JetMovement : MonoBehaviour
 		}
 
 		{
-			var motorPower = Mathf.RoundToInt(MotorPowerCurve.Evaluate(localForwardSpeed));
+			var motorPower = Mathf.RoundToInt(SpeedToMotorPowerCurve.Evaluate(localForwardSpeed));
+			// docs recommend 100 ms or more
 			BhapticsLibrary.PlayMotors((int)PositionType.GloveL, Enumerable.Repeat(motorPower, 6).ToArray(), 100);
 			BhapticsLibrary.PlayMotors((int)PositionType.GloveR, Enumerable.Repeat(motorPower, 6).ToArray(), 100);
 			BhapticsLibrary.PlayMotors((int)PositionType.Vest, Enumerable.Repeat(motorPower, 32).ToArray(), 100);
 		}
 	}
 
-	public void OnImpact(Vector3 impulse)
+	private void OnCollisionEnter(Collision other)
 	{
-		Debug.Log($"impact! {impulse}");
+		var motorPower = Mathf.RoundToInt(ImpulseToMotorPowerCurve.Evaluate(other.impulse.magnitude));
+		Debug.Log($"impulse motor power = {motorPower}");
+		BhapticsLibrary.PlayMotors((int)PositionType.GloveL, Enumerable.Repeat(motorPower, 6).ToArray(), ImpulseMotorDuration);
+		BhapticsLibrary.PlayMotors((int)PositionType.GloveR, Enumerable.Repeat(motorPower, 6).ToArray(), ImpulseMotorDuration);
+		BhapticsLibrary.PlayMotors((int)PositionType.Vest, Enumerable.Repeat(motorPower, 32).ToArray(), ImpulseMotorDuration);
+
+
 	}
 
 	private void OnGUI()
@@ -61,7 +69,7 @@ public class JetMovement : MonoBehaviour
 		GUILayout.Label($"velocity = {Body.linearVelocity} / {transform.InverseTransformDirection(Body.linearVelocity)}\n" +
 			$"angular velocity = {Body.angularVelocity} / {transform.InverseTransformDirection(Body.angularVelocity)}");
 
-		var motorPower = Mathf.RoundToInt(MotorPowerCurve.Evaluate(localForwardSpeed));
-		GUILayout.Label($"motor power = {motorPower}");
+		var motorPower = Mathf.RoundToInt(SpeedToMotorPowerCurve.Evaluate(localForwardSpeed));
+		GUILayout.Label($"speed motor power = {motorPower}");
 	}
 }
