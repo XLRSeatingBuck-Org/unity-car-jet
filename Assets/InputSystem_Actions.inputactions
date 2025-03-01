@@ -1093,6 +1093,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Aim Hose",
+                    "type": "Value",
+                    "id": "593caa87-93cc-4d27-a0d9-a6d3ad03733d",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Fire Hose",
+                    "type": "Button",
+                    "id": "fac72d91-22e5-4630-9fa6-0aa93d6c0427",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1100,17 +1118,6 @@
                     "name": "",
                     "id": "d2a3f431-4945-4724-9a45-7276a5d9bfee",
                     "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Gas",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a3a9ea42-f34b-4405-92ac-272cf2a2f893",
-                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -1133,17 +1140,6 @@
                     "name": "",
                     "id": "fef47a5e-f5b8-4c59-ab28-0aa95fed6cc0",
                     "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Brake",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d19d798a-b9d8-4b65-8e1a-d6f9ea65677c",
-                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -1207,31 +1203,9 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Negative",
-                    "id": "935d3c26-8a0c-4036-80e4-dfbed022514d",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Steer",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "Positive",
                     "id": "5749998f-5c7c-49ad-9997-c64588a7eb61",
                     "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Steer",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Positive",
-                    "id": "11b87b73-d93f-4cab-8f70-e7735f26e2da",
-                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -1401,6 +1375,94 @@
                     "processors": "",
                     "groups": ";Car",
                     "action": "Gear R",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Keyboard",
+                    "id": "c0032bc3-30fb-471d-9c4b-d96144d21963",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim Hose",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "1cb868bb-d948-40d1-9e62-9fb658e3adc0",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Aim Hose",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "c3797c7f-d151-4131-9c03-242c25781ea8",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Aim Hose",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "70f646ae-fbdd-45d1-90b4-3bdec1beb799",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Aim Hose",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "e0b70813-0a89-4f90-831d-c16f5694ae8d",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Aim Hose",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "392f09e4-df07-43ce-b41f-970eba490735",
+                    "path": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>/hat",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Car",
+                    "action": "Aim Hose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e0a3c18a-c688-4bd1-ba22-b8afec645c77",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Fire Hose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ccbe0e88-dc28-42b5-82ae-e4d36fc23a79",
+                    "path": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Car",
+                    "action": "Fire Hose",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
