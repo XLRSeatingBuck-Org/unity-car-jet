@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class CarMovement : MonoBehaviour
 {
-	public InputActionReference GasInput, BrakeInput, SteerInput;
+	public InputActionReference GasInput, BrakeInput, SteerInput, GearRInput;
 
 	public Rigidbody Body;
 
@@ -16,6 +16,9 @@ public class CarMovement : MonoBehaviour
 		var gas = GasInput.action.ReadValue<float>();
 		var brake = BrakeInput.action.ReadValue<float>();
 		var steer = SteerInput.action.ReadValue<float>();
+		var reverse = GearRInput.action.IsPressed();
+
+		gas *= reverse ? -1 : 1;
 
 		LeftBack.motorTorque = gas * GasTorque;
 		LeftBack.brakeTorque = brake * BrakeTorque;
@@ -33,7 +36,8 @@ public class CarMovement : MonoBehaviour
 		var gas = GasInput.action.ReadValue<float>();
 		var brake = BrakeInput.action.ReadValue<float>();
 		var steer = SteerInput.action.ReadValue<float>();
-		GUILayout.Label($"gas = {gas}\nbrake = {brake}\nsteer = {steer}");
+		var reverse = GearRInput.action.IsPressed();
+		GUILayout.Label($"gas = {gas}\nbrake = {brake}\nsteer = {steer}\nreverse = {reverse}");
 
 		GUILayout.Label($"wheel rpm = \n{LeftFront.rpm}\t{RightFront.rpm}\n{LeftBack.rpm}\t{RightBack.rpm}");
 
