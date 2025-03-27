@@ -248,16 +248,6 @@ namespace Bhaptics.SDK2.Universal
         }
         
         
-        public void ResumePlay(string eventId)
-        {
-            if (!connected)
-            {
-                return;
-            }
-
-            var message = TactHubMessage.SdkResume(eventId);
-            SendMessageToTactHub(JsonUtility.ToJson(message));
-        }
 
         public void PausePlay(string eventId)
         {
@@ -270,6 +260,16 @@ namespace Bhaptics.SDK2.Universal
             SendMessageToTactHub(JsonUtility.ToJson(message));
         }
         
+        public void ResumePlay(string eventId)
+        {
+            if (!connected)
+            {
+                return;
+            }
+
+            var message = TactHubMessage.SdkResume(eventId);
+            SendMessageToTactHub(JsonUtility.ToJson(message));
+        }
         
         public void TogglePosition(string address)
         {

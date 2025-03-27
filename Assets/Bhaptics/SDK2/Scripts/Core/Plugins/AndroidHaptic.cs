@@ -434,6 +434,17 @@ namespace Bhaptics.SDK2
             AndroidUtils.CallNativeVoidMethod(bhapticsWrapperObjectPtr, pingPtr, PingParams);
         }
 
+        public void Pause(string eventId)
+        {
+            if (androidJavaObject == null)
+            {
+                return;
+            }
+
+            PauseParams[0] = eventId;
+            AndroidUtils.CallNativeVoidMethod(bhapticsWrapperObjectPtr, pausePtr, PauseParams);
+        }
+        
         public void Resume(string eventId)
         {
             if (androidJavaObject == null)
@@ -445,16 +456,6 @@ namespace Bhaptics.SDK2
             AndroidUtils.CallNativeVoidMethod(bhapticsWrapperObjectPtr, resumePtr, ResumeParams);
         }
         
-        public void Pause(string eventId)
-        {
-            if (androidJavaObject == null)
-            {
-                return;
-            }
-
-            PauseParams[0] = eventId;
-            AndroidUtils.CallNativeVoidMethod(bhapticsWrapperObjectPtr, pausePtr, PauseParams);
-        }
     }
 
     internal static class AndroidUtils

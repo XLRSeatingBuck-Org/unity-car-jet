@@ -553,10 +553,8 @@ namespace Bhaptics.SDK2
 #endif
         }
         
-        /* TODO
-         
         /// <summary>
-        /// Pauses the haptic event. Use PausePlay(string eventId) to pause a specific haptic event.The paused event can be resumed from the point it was paused using ResumePlay(string eventId).
+        /// Pauses an active haptic event. Use PauseByEventId(string eventId) to pause a specific haptic event. The paused event can later be resumed using ResumeByEventId(string eventId).
         /// <para>eventId refers to the name of an event as defined on <a href="https://developer.bhaptics.com">developer.bhaptics.com</a></para>
         /// </summary>
         /// <param name="eventId">Name of haptic event which you want to pause.</param>
@@ -592,7 +590,7 @@ namespace Bhaptics.SDK2
         }
 
         /// <summary>
-        /// Resumes the paused haptic event. Use ResumePlay(string eventId) to restart a haptic event from the point it was paused with PausePlay(string eventId).
+        /// Resumes a paused haptic event. Use ResumeByEventId(string eventId) to resume playback from the position it was paused at.
         /// <para>eventId refers to the name of an event as defined on <a href="https://developer.bhaptics.com">developer.bhaptics.com</a></para>
         /// </summary>
         /// <param name="eventId">Name of haptic event which you want to resume.</param>
@@ -626,8 +624,6 @@ namespace Bhaptics.SDK2
             bhaptics_library.resume(eventId);
 #endif
         }
-        
-        */
 
         /// <summary>
         /// Stop the haptic event by Event ID.
