@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 1186786331}
   - component: {fileID: 1186786332}
   m_Layer: 0
-  m_Name: geojson
+  m_Name: osm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -439,7 +439,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f6bfa6403a049d1af03d9b61fc3453e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PrefabToPlace: {fileID: 0}
+  XmlToLoad: {fileID: 4900000, guid: fb6f068c5db5e1a47a2dab1a84fa892c, type: 3}
+  PrefabToPlace: {fileID: 1293020968788432730, guid: c3e7f8003617c71459bce791ea906622, type: 3}
 --- !u!1 &1369233543
 GameObject:
   m_ObjectHideFlags: 0
