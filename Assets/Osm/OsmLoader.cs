@@ -34,7 +34,7 @@ public class OsmLoader : MonoBehaviour
 				{
 					var count = 0;
 					var total = double3.zero;
-					foreach (var node in way.SelectNodes("nd").Cast<XmlNode>())
+					foreach (var node in way.SelectNodes("nd").Cast<XmlNode>().SkipLast(1))
 					{
 						var id = ulong.Parse(node.Attributes["ref"].Value);
 						var nodePos = nodes[id];
@@ -48,11 +48,12 @@ public class OsmLoader : MonoBehaviour
 			// Debug.Log(string.Join("\n", buildings));
 
 			var forests = xml.SelectNodes("osm/way[tag[@k='natural']]").Cast<XmlNode>()
-				.Select(way => way.SelectNodes("nd").Cast<XmlNode>()
+				.Select(way => way.SelectNodes("nd").Cast<XmlNode>().SkipLast(1)
 					.Select(node => nodes[ulong.Parse(node.Attributes["ref"].Value)])
 					.ToList()
 				)
 				.ToList();
+			// TODO: choose random points in the polygon
 
 			longLatHeightPoints = buildings;
 		}
