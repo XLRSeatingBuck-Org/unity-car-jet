@@ -531,39 +531,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.0000001
+      value: 1.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.0000001
+      value: 1.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41061.96
+      value: 6981.6763
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -160.26984
+      value: 314.57227
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5327.9814
+      value: 583.0416
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8602106
+      value: -0.60489666
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.15814583
+      value: -0.04942418
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.47640356
+      value: 0.79214036
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.08981771
+      value: -0.06458293
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -627,24 +627,24 @@ MonoBehaviour:
   _detectTransformChanges: 1
   _localToGlobeFixedMatrix:
     c0:
-      x: 0.7221820810292997
-      y: 0.1571744153399886
-      z: 0.6736092628183336
+      x: 0.08818938396903821
+      y: 0.6397317372484054
+      z: 0.7635223994444733
       w: 0
     c1:
-      x: -0.5895849536160538
-      y: -0.3693909990976015
-      z: 0.7182895418959419
+      x: -0.5594267515287247
+      y: -0.6023994806284986
+      z: 0.5693475000714602
       w: 0
     c2:
-      x: -0.3617219312243934
-      y: 0.9158857269328599
-      z: 0.17409988632490653
+      x: -0.8241751638315098
+      y: 0.47734525869342936
+      z: -0.3047578067189625
       w: 0
     c3:
-      x: -2708718.9125006488
-      y: -4271986.000126459
-      z: 3872114.5010170247
+      x: -2666225.88154919
+      y: -4294635.659973883
+      z: 3877083.602968718
       w: 1
   _localToGlobeFixedMatrixIsValid: 1
 --- !u!1 &1716737974
