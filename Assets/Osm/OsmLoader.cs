@@ -7,18 +7,19 @@ using CesiumForUnity;
 using Unity.Mathematics;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
+using Random = Unity.Mathematics.Random;
 
 public class OsmLoader : MonoBehaviour
 {
 	public TextAsset XmlToLoad;
-	public GameObject PrefabToPlace;
+	public GameObject BuildingPrefab, TreePrefab;
 
 	private IEnumerator Start()
 	{
 		// load the dataset
 		var stopwatch = Stopwatch.StartNew();
-		var buildings = new List<double3>();
-		var trees = new List<double3>();
+		var points = new List<double3>();
+		int treeStartIndex;
 		{
 			// https://github.com/SimonCuddihy/osm-unity/blob/master/Assets/Scripts/MapReader.cs
 			var xml = new XmlDocument();
@@ -30,52 +31,59 @@ public class OsmLoader : MonoBehaviour
 				);
 			// Debug.Log(string.Join("\n", nodes));
 
-			foreach (var way in xml.SelectNodes("osm/way[tag[@k='building']]").Cast<XmlNode>())
+			if (BuildingPrefab != null)
 			{
-				var count = 0;
-				var total = double3.zero;
-				foreach (var node in way.SelectNodes("nd").Cast<XmlNode>().SkipLast(1))
+				foreach (var way in xml.SelectNodes("osm/way[tag[@k='building']]").Cast<XmlNode>())
 				{
-					var id = ulong.Parse(node.Attributes["ref"].Value);
-					var nodePos = nodes[id];
-					total += nodePos;
-					count++;
-				}
-
-				buildings.Add(total / count);
-			}
-			// Debug.Log(string.Join("\n", buildings));
-
-			foreach (var way in xml.SelectNodes("osm/way[tag[@k='natural']]").Cast<XmlNode>())
-			{
-				var boundary = way.SelectNodes("nd").Cast<XmlNode>().SkipLast(1)
-					.Select(node => nodes[ulong.Parse(node.Attributes["ref"].Value)])
-					.ToList();
-				var (minlat, minlon, maxlat, maxlon) = (
-					boundary.Min(x => x.y),
-					boundary.Min(x => x.x),
-					boundary.Max(x => x.y),
-					boundary.Max(x => x.x)
-				);
-				trees.AddRange(boundary);
-
-				var points = new List<double3>();
-				const double step = 0.001;
-				for (var i = minlon; i <= maxlon; i += step)
-				{
-					for (var j = minlat; j <= maxlat; j += step)
+					var count = 0;
+					var total = double3.zero;
+					foreach (var node in way.SelectNodes("nd").Cast<XmlNode>().SkipLast(1))
 					{
-						var point = new double3(i, j, 0);
-						if (PolygonHelper.IsPointInPolygon(boundary, point))
-							points.Add(point);
+						total += nodes[ulong.Parse(node.Attributes["ref"].Value)];
+						count++;
 					}
+
+					points.Add(total / count);
 				}
 
-				trees.AddRange(points);
+				// Debug.Log(string.Join("\n", buildings));
 			}
+			treeStartIndex = points.Count;
 
+			if (TreePrefab != null)
+			{
+				foreach (var way in xml.SelectNodes("osm/way[tag[@k='natural']]").Cast<XmlNode>())
+				{
+					var boundary = way.SelectNodes("nd").Cast<XmlNode>().SkipLast(1)
+						.Select(node => nodes[ulong.Parse(node.Attributes["ref"].Value)])
+						.ToList();
+					var (minlat, minlon, maxlat, maxlon) = (
+						boundary.Min(x => x.y),
+						boundary.Min(x => x.x),
+						boundary.Max(x => x.y),
+						boundary.Max(x => x.x)
+					);
+					// trees.AddRange(boundary);
+
+					var trees = new List<double3>();
+					const double step = 0.0003;
+					for (var i = minlon; i <= maxlon; i += step)
+					{
+						for (var j = minlat; j <= maxlat; j += step)
+						{
+							// jitter it a bit
+							var point = new double3(i + UnityEngine.Random.value * step,
+								j + UnityEngine.Random.value * step, 0);
+							if (PolygonHelper.IsPointInPolygon(boundary, point))
+								trees.Add(point);
+						}
+					}
+
+					points.AddRange(trees);
+				}
+			}
 		}
-		Debug.Log($"dataset load took {stopwatch.ElapsedMilliseconds}ms with {trees.Count} trees and {buildings.Count} buildings");
+		Debug.Log($"dataset load took {stopwatch.ElapsedMilliseconds}ms with {points.Count} points");
 
 		// place prefab
 		stopwatch.Restart();
@@ -84,15 +92,17 @@ public class OsmLoader : MonoBehaviour
 			var tileset = georeference.GetComponentInChildren<Cesium3DTileset>();
 			
 			// https://github.com/CesiumGS/cesium-unity/pull/507#issuecomment-2380048726
-			var task = tileset.SampleHeightMostDetailed(trees.Concat(buildings).ToArray());
+			var task = tileset.SampleHeightMostDetailed(points.ToArray());
 			yield return new WaitForTask(task);
 			var result = task.Result;
 			Debug.Log($"sample success = {result.sampleSuccess.All(x => x)} in {stopwatch.ElapsedMilliseconds}ms");
-			foreach (var longLatHeightPoint in result.longitudeLatitudeHeightPositions)
+			for (var i = 0; i < result.longitudeLatitudeHeightPositions.Length; i++)
 			{
-				var prefab = Instantiate(PrefabToPlace, georeference.transform);
+				var point = result.longitudeLatitudeHeightPositions[i];
+				var prefab = Instantiate(i < treeStartIndex ? BuildingPrefab : TreePrefab, georeference.transform);
 				var anchor = prefab.GetComponent<CesiumGlobeAnchor>();
-				anchor.longitudeLatitudeHeight = longLatHeightPoint;
+				anchor.longitudeLatitudeHeight = point;
+				// if (i % 1000 == 0) yield return null;
 			}
 		}
 		Debug.Log($"place prefab took {stopwatch.ElapsedMilliseconds}ms");
