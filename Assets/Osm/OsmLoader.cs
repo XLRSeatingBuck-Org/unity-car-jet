@@ -7,7 +7,6 @@ using CesiumForUnity;
 using Unity.Mathematics;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
-using Random = Unity.Mathematics.Random;
 
 public class OsmLoader : MonoBehaviour
 {
@@ -63,17 +62,16 @@ public class OsmLoader : MonoBehaviour
 						boundary.Max(x => x.y),
 						boundary.Max(x => x.x)
 					);
-					// trees.AddRange(boundary);
+					// points.AddRange(boundary);
 
 					var trees = new List<double3>();
-					const double step = 0.0003;
+					const double step = 0.0005;
 					for (var i = minlon; i <= maxlon; i += step)
 					{
 						for (var j = minlat; j <= maxlat; j += step)
 						{
 							// jitter it a bit
-							var point = new double3(i + UnityEngine.Random.value * step,
-								j + UnityEngine.Random.value * step, 0);
+							var point = new double3(i + UnityEngine.Random.value * step / 2, j + UnityEngine.Random.value * step / 2, 0);
 							if (PolygonHelper.IsPointInPolygon(boundary, point))
 								trees.Add(point);
 						}
@@ -99,9 +97,21 @@ public class OsmLoader : MonoBehaviour
 			for (var i = 0; i < result.longitudeLatitudeHeightPositions.Length; i++)
 			{
 				var point = result.longitudeLatitudeHeightPositions[i];
-				var prefab = Instantiate(i < treeStartIndex ? BuildingPrefab : TreePrefab, georeference.transform);
+				var isBuilding = i < treeStartIndex;
+				var prefab = Instantiate(isBuilding ? BuildingPrefab : TreePrefab, georeference.transform);
 				var anchor = prefab.GetComponent<CesiumGlobeAnchor>();
 				anchor.longitudeLatitudeHeight = point;
+				Destroy(anchor); // these lag and we dont need them if we dont do origin shift
+				
+				if (isBuilding)
+				{
+					var scale = prefab.transform.localScale;
+					scale.y *= UnityEngine.Random.Range(.5f, 1f);
+					scale.x *= UnityEngine.Random.Range(.5f, 1f);
+					scale.z *= UnityEngine.Random.Range(.5f, 1f);
+					prefab.transform.localScale = scale;
+				}
+				
 				// if (i % 1000 == 0) yield return null;
 			}
 		}
