@@ -71,7 +71,7 @@ public class OsmLoader : MonoBehaviour
 						for (var j = minlat; j <= maxlat; j += step)
 						{
 							// jitter it a bit
-							var point = new double3(i + UnityEngine.Random.value * step / 2, j + UnityEngine.Random.value * step / 2, 0);
+							var point = new double3(i + UnityEngine.Random.value * step, j + UnityEngine.Random.value * step, 0);
 							if (PolygonHelper.IsPointInPolygon(boundary, point))
 								trees.Add(point);
 						}
