@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 274624307}
   - component: {fileID: 274624309}
   - component: {fileID: 274624308}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cesium World Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5198,6 +5198,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1369233546}
     m_Modifications:
+    - target: {fileID: 2147626517968238020, guid: 5762b67db25a2c145b982a1ce74251c3, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 2667417928345339248, guid: 5762b67db25a2c145b982a1ce74251c3, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5249,6 +5253,10 @@ PrefabInstance:
     - target: {fileID: 2792218741957914664, guid: 5762b67db25a2c145b982a1ce74251c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3251755977680612804, guid: 5762b67db25a2c145b982a1ce74251c3, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 3311311803080157842, guid: 5762b67db25a2c145b982a1ce74251c3, type: 3}
       propertyPath: m_Name
@@ -5780,7 +5788,7 @@ MonoBehaviour:
   _showTilesInHierarchy: 0
   _updateInEditor: 1
   _logSelectionStats: 0
-  _createPhysicsMeshes: 1
+  _createPhysicsMeshes: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
