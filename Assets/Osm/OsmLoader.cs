@@ -13,6 +13,8 @@ public class OsmLoader : MonoBehaviour
 	public TextAsset XmlToLoad;
 	public GameObject BuildingPrefab, TreePrefab;
 
+	public bool Loaded = false;
+
 	private IEnumerator Start()
 	{
 		// load the dataset
@@ -89,7 +91,7 @@ public class OsmLoader : MonoBehaviour
 			var georeference = GetComponentInParent<CesiumGeoreference>();
 			var tileset = georeference.GetComponentInChildren<Cesium3DTileset>();
 
-			yield return new WaitForSeconds(1);
+			yield return new WaitForSecondsRealtime(1);
 			// https://github.com/CesiumGS/cesium-unity/pull/507#issuecomment-2380048726
 			var task = tileset.SampleHeightMostDetailed(points.ToArray());
 			yield return new WaitForTask(task);
@@ -118,5 +120,6 @@ public class OsmLoader : MonoBehaviour
 			}
 		}
 		Debug.Log($"place prefab took {stopwatch.ElapsedMilliseconds}ms");
+		Loaded = true;
 	}
 }
