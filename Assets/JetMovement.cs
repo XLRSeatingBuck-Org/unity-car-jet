@@ -1,5 +1,5 @@
-﻿using Bhaptics.SDK2;
-using System.Linq;
+﻿using System.Linq;
+using Bhaptics.SDK2;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,8 +11,7 @@ public class JetMovement : MonoBehaviour
 
 	public InputActionReference Throttle, Pitch, Yaw, Roll;
 
-	public AnimationCurve SpeedToMotorPowerCurve, ImpulseToMotorPowerCurve;
-	public int ImpulseMotorDuration;
+	public AnimationCurve SpeedToMotorPowerCurve;
 
 	private void FixedUpdate()
 	{
@@ -41,17 +40,6 @@ public class JetMovement : MonoBehaviour
 			BhapticsLibrary.PlayMotors((int)PositionType.GloveR, Enumerable.Repeat(motorPower, 6).ToArray(), 100);
 			BhapticsLibrary.PlayMotors((int)PositionType.Vest, Enumerable.Repeat(motorPower, 32).ToArray(), 100);
 		}
-	}
-
-	private void OnCollisionEnter(Collision other)
-	{
-		var motorPower = Mathf.RoundToInt(ImpulseToMotorPowerCurve.Evaluate(other.impulse.magnitude));
-		Debug.Log($"impulse motor power = {motorPower}");
-		BhapticsLibrary.PlayMotors((int)PositionType.GloveL, Enumerable.Repeat(motorPower, 6).ToArray(), ImpulseMotorDuration);
-		BhapticsLibrary.PlayMotors((int)PositionType.GloveR, Enumerable.Repeat(motorPower, 6).ToArray(), ImpulseMotorDuration);
-		BhapticsLibrary.PlayMotors((int)PositionType.Vest, Enumerable.Repeat(motorPower, 32).ToArray(), ImpulseMotorDuration);
-
-
 	}
 
 	private void OnGUI()
