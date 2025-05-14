@@ -255,9 +255,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130010142}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.002847804, y: 0.71117604, z: 0.0021871831, w: 0.7030049}
+  m_LocalRotation: {x: -0.002847804, y: 0.7111761, z: 0.002187183, w: 0.70300484}
   m_LocalPosition: {x: 4015.0547, y: 0.3439331, z: 2471.7979}
-  m_LocalScale: {x: 39.33575, y: 1, z: 1695.1714}
+  m_LocalScale: {x: 39.335754, y: 1, z: 1695.1716}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1369233546}
@@ -299,24 +299,92 @@ MonoBehaviour:
   _detectTransformChanges: 1
   _localToGlobeFixedMatrix:
     c0:
-      x: -13.06027119107573
-      y: -20.149302407268806
-      z: -31.156641709447786
+      x: -13.060278094398475
+      y: -20.149300795761597
+      z: -31.156644722882092
       w: 0
     c1:
-      x: -0.4242024753540116
-      y: -0.6689163535992784
-      z: 0.6104122965651134
+      x: -0.4242024750569159
+      y: -0.6689163535922528
+      z: 0.6104122967793186
       w: 0
     c2:
-      x: 1428.1904136323012
-      y: -913.1330100015346
-      z: -8.1382634412113
+      x: 1428.1905254762273
+      y: -913.1332893582369
+      z: -8.138492545721467
       w: 0
     c3:
       x: -2664418.7179912194
       y: -4293851.410681449
       z: 3878665.1096092267
+      w: 1
+  _localToGlobeFixedMatrixIsValid: 1
+--- !u!1 &365860681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 365860682}
+  - component: {fileID: 365860683}
+  m_Layer: 0
+  m_Name: jet start
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &365860682
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365860681}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00005895156, y: -0.70576435, z: -0.000019514026, w: 0.7084467}
+  m_LocalPosition: {x: 4833.3613, y: 6.6696734, z: 2465.6553}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1369233546}
+  m_LocalEulerAnglesHint: {x: -0.043, y: -89.653, z: 0}
+--- !u!114 &365860683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365860681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f14e1eb550b9a4fb6c0a2f0456845b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _adjustOrientationForGlobeWhenMoving: 1
+  _detectTransformChanges: 1
+  _localToGlobeFixedMatrix:
+    c0:
+      x: 0.3258347109880605
+      y: 0.5169844957685183
+      z: 0.791554688902207
+      w: 0
+    c1:
+      x: -0.4177971862504539
+      y: -0.6723196641201512
+      z: 0.6110906482663362
+      w: 0
+    c2:
+      x: -0.848102173237676
+      y: 0.5298238665530539
+      z: 0.003070415782082516
+      w: 0
+    c3:
+      x: -2663728.3670271426
+      y: -4294290.8626793595
+      z: 3878664.1134775314
       w: 1
   _localToGlobeFixedMatrixIsValid: 1
 --- !u!1 &394579437
@@ -2861,6 +2929,7 @@ Transform:
   - {fileID: 394579438}
   - {fileID: 130010143}
   - {fileID: 1186786331}
+  - {fileID: 365860682}
   - {fileID: 1608737099}
   - {fileID: 1756227892}
   - {fileID: 1103145759}
@@ -3254,7 +3323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000019889405
+      value: -0.000019889407
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3326,19 +3395,19 @@ MonoBehaviour:
   _detectTransformChanges: 1
   _localToGlobeFixedMatrix:
     c0:
-      x: 0.3258384199747401
-      y: 0.5169904419082878
-      z: 0.7915528923707147
+      x: 0.325838419975817
+      y: 0.5169904419100205
+      z: 0.7915528923691397
       w: 0
     c1:
-      x: -0.4177997760207053
-      y: -0.6723132581320868
-      z: 0.6110959254461339
+      x: -0.417799776017688
+      y: -0.6723132581321146
+      z: 0.611095925448166
       w: 0
     c2:
-      x: -0.8481022565977671
-      y: 0.5298291519423871
-      z: 0.0030669989227994176
+      x: -0.8481022565988398
+      y: 0.529829151940661
+      z: 0.0030669989243685453
       w: 0
     c3:
       x: -2663779.569175301
