@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -14,6 +15,11 @@ public class OsmLoader : MonoBehaviour
 	public GameObject BuildingPrefab, TreePrefab;
 
 	public bool Loaded = false;
+	/*
+	private Mesh _mesh;
+	private Material[] _materials;
+	private Matrix4x4[] _matrices;
+	*/
 
 	private IEnumerator Start()
 	{
@@ -86,6 +92,7 @@ public class OsmLoader : MonoBehaviour
 		Debug.Log($"dataset load took {stopwatch.ElapsedMilliseconds}ms with {points.Count} points");
 
 		// place prefab
+		var prefabs = new List<GameObject>();
 		stopwatch.Restart();
 		{
 			var georeference = GetComponentInParent<CesiumGeoreference>();
@@ -117,9 +124,40 @@ public class OsmLoader : MonoBehaviour
 				}
 				
 				// if (i % 1000 == 0) yield return null;
+				prefabs.Add(prefab);
 			}
 		}
 		Debug.Log($"place prefab took {stopwatch.ElapsedMilliseconds}ms");
 		Loaded = true;
+		
+		/*
+		// convert to gpu instanced data
+		yield return new WaitForSecondsRealtime(1); // let it reposition
+		_mesh = TreePrefab.GetComponentInChildren<MeshFilter>().sharedMesh;
+		_materials = TreePrefab.GetComponentInChildren<MeshRenderer>().sharedMaterials;
+		foreach (var material in _materials)
+		{
+			material.enableInstancing = true;
+		}
+		_matrices = prefabs.Select(x => x.GetComponentInChildren<MeshRenderer>().transform.localToWorldMatrix).ToArray();
+		
+		foreach (var tree in prefabs)
+		{
+			Destroy(tree);
+		}
+		*/
 	}
+
+	/*
+	private void Update()
+	{
+		if (_materials != null)
+		{
+			for (var i = 0; i < _materials.Length; i++)
+			{
+				Graphics.RenderMeshInstanced(new RenderParams(_materials[i]), _mesh, i, _matrices);
+			}
+		}
+	}
+	*/
 }
