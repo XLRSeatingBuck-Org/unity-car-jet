@@ -73,7 +73,7 @@ public class OsmLoader : MonoBehaviour
 					// points.AddRange(boundary);
 
 					var trees = new List<double3>();
-					const double step = 0.0005;
+					const double step = 0.001;
 					for (var i = minlon; i <= maxlon; i += step)
 					{
 						for (var j = minlat; j <= maxlat; j += step)
