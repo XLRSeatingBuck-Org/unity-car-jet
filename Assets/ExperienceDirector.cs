@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 /// <summary>
@@ -13,7 +11,9 @@ public class ExperienceDirector : MonoBehaviour
     
     public GameObject fireBeacon, homeBeacon;
     public CanvasGroup loadingFader;
-    public CanvasGroup loseGroup;
+    public CanvasGroup loseGroup, winGroup;
+
+    private bool _fireExtinguished;
 
     private void Awake()
     {
@@ -24,6 +24,7 @@ public class ExperienceDirector : MonoBehaviour
         loadingFader.alpha = 1;
         Time.timeScale = 0;
         loseGroup.alpha = 0;
+        winGroup.alpha = 0;
     }
 
     private IEnumerator Start()
@@ -42,6 +43,24 @@ public class ExperienceDirector : MonoBehaviour
         homeBeacon.SetActive(true);
         // TODO: maybe put text or something
         // TODO: sound
+
+        _fireExtinguished = true;
+    }
+
+    private void Update()
+    {
+        if (_fireExtinguished && PlaneCrashController.Instance.StoppedInRunway)
+        {
+            StartCoroutine(OnWin());
+        }
+    }
+
+    private IEnumerator OnWin()
+    {
+        winGroup.alpha = 1;
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(5);
+        Application.Quit();
     }
 
     public void OnCrash()
