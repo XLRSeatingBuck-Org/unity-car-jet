@@ -1,21 +1,29 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// controls the main experience (moving beacons around, displaying text maybe, etc)
 /// </summary>
 public class ExperienceDirector : MonoBehaviour
 {
+    public static ExperienceDirector Instance;
+    
     public GameObject fireBeacon, homeBeacon;
     public CanvasGroup loadingFader;
+    public CanvasGroup loseGroup;
 
     private void Awake()
     {
+        Instance = this;
+        
         fireBeacon.SetActive(true);
         homeBeacon.SetActive(false);
         loadingFader.alpha = 1;
         Time.timeScale = 0;
+        loseGroup.alpha = 0;
     }
 
     private IEnumerator Start()
@@ -34,5 +42,18 @@ public class ExperienceDirector : MonoBehaviour
         homeBeacon.SetActive(true);
         // TODO: maybe put text or something
         // TODO: sound
+    }
+
+    public void OnCrash()
+    {
+        StartCoroutine(_OnCrash());
+    }
+
+    private IEnumerator _OnCrash()
+    {
+        loseGroup.alpha = 1;
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(5);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -565,6 +565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a72a73c0fda4972bd90d6b7d946b8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crashImpulseThreshold: 10000
   ImpulseToMotorPowerCurve:
     serializedVersion: 2
     m_Curve:
