@@ -1,9 +1,18 @@
+using System;
 using UnityEngine;
 
 public class EnableExteng : MonoBehaviour
 {
     // Array to hold references to 8 GameObjects
     public GameObject[] particleObjects = new GameObject[8];
+
+    private void Awake()
+    {
+        foreach (var particleObject in particleObjects)
+        {
+            particleObject.SetActive(false);
+        }
+    }
 
     // Update is called once per frame
     void Update()

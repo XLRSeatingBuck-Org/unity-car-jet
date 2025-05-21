@@ -30,7 +30,7 @@ public class ExperienceDirector : MonoBehaviour
     private IEnumerator Start()
     {
         var osmLoader = FindAnyObjectByType<OsmLoader>();
-        yield return new WaitUntil(() => osmLoader.Loaded);
+        if (false) yield return new WaitUntil(() => osmLoader.Loaded);
         Debug.Log("loaded!");
         loadingFader.alpha = 0;
         Time.timeScale = 1;
