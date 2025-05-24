@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5438592194505623150
 Transform:
   m_ObjectHideFlags: 0
@@ -398,6 +398,7 @@ GameObject:
   - component: {fileID: 4953334445433605772}
   - component: {fileID: 1853681618120356991}
   - component: {fileID: 5152382022145847436}
+  - component: {fileID: -2484890428579740974}
   m_Layer: 0
   m_Name: jet
   m_TagString: Untagged
@@ -591,6 +592,20 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   ImpulseMotorDuration: 200
+--- !u!114 &-2484890428579740974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7100013168221611326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6ed770c5db4e6d95f09387102152e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vrCamera: {fileID: 8047870575207364704}
+  regularCamera: {fileID: 1578746879234975467}
 --- !u!1 &7951102484412968592
 GameObject:
   m_ObjectHideFlags: 0

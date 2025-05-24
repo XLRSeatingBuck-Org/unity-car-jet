@@ -345,7 +345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365860681}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00005895156, y: -0.70576435, z: -0.000019514067, w: 0.7084467}
+  m_LocalRotation: {x: -0.00005895156, y: -0.70576435, z: -0.000019514071, w: 0.7084467}
   m_LocalPosition: {x: 4833.3613, y: 6.6696734, z: 2465.6553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -368,19 +368,19 @@ MonoBehaviour:
   _detectTransformChanges: 1
   _localToGlobeFixedMatrix:
     c0:
-      x: 0.32583471101283007
-      y: 0.5169844958083712
-      z: 0.7915546888659839
+      x: 0.32583471101498396
+      y: 0.5169844958118368
+      z: 0.7915546888628341
       w: 0
     c1:
-      x: -0.4177971861810554
-      y: -0.6723196641207934
-      z: 0.6110906483130768
+      x: -0.4177971861750207
+      y: -0.6723196641208492
+      z: 0.6110906483171412
       w: 0
     c2:
-      x: -0.8481021732623488
-      y: 0.5298238665133534
-      z: 0.0030704158181723475
+      x: -0.8481021732644943
+      y: 0.5298238665099012
+      z: 0.0030704158213105937
       w: 0
     c3:
       x: -2663728.3670271426
@@ -3514,10 +3514,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1369233546}
     m_Modifications:
-    - target: {fileID: 1578746879234975467, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1764404701163029713, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: moveWithTransform
       value: 0
@@ -3574,10 +3570,6 @@ PrefabInstance:
       propertyPath: moveWithTransform
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5186996955286012414, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6695085226193807707, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3607,14 +3599,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4833.3613
       objectReference: {fileID: 0}
@@ -3640,7 +3624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000019499777
+      value: -0.00001949978
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3712,19 +3696,19 @@ MonoBehaviour:
   _detectTransformChanges: 1
   _localToGlobeFixedMatrix:
     c0:
-      x: 0.3258346880147427
-      y: 0.516984458809273
-      z: 0.791554722500899
+      x: 0.32583468801366566
+      y: 0.5169844588075403
+      z: 0.7915547225024738
       w: 0
     c1:
-      x: -0.4177971915944278
-      y: -0.6723197003958026
-      z: 0.6110906047023694
+      x: -0.4177971915974452
+      y: -0.6723197003957746
+      z: 0.6110906047003373
       w: 0
     c2:
-      x: -0.8481021794335579
-      y: 0.5298238565871087
-      z: 0.0030704248352525785
+      x: -0.8481021794324851
+      y: 0.5298238565888348
+      z: 0.003070424833683455
       w: 0
     c3:
       x: -2663728.3670271426
@@ -3758,7 +3742,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700688396}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00019436226, y: 1.2735825e-16, z: 0.00031487373, w: 0.99999994}
+  m_LocalRotation: {x: -0.00019436226, y: 1.6778542e-16, z: 0.00031487373, w: 0.99999994}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3782,8 +3766,8 @@ MonoBehaviour:
   _localToGlobeFixedMatrix:
     c0:
       x: 0.8490223700498881
-      y: -0.5283567612056324
-      z: 0.0003847637877168504
+      y: -0.5283567612056325
+      z: 0.0003847637877167864
       w: 0
     c1:
       x: -0.4185334184019205
@@ -3791,7 +3775,7 @@ MonoBehaviour:
       z: 0.610827112307321
       w: 0
     c2:
-      x: 0.3224760345137033
+      x: 0.3224760345137034
       y: 0.5187669190852353
       z: 0.7917639110411212
       w: 0

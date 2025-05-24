@@ -261,7 +261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6413772947742676592
 Transform:
   m_ObjectHideFlags: 0
@@ -715,6 +715,7 @@ GameObject:
   - component: {fileID: 6968044597085661968}
   - component: {fileID: 4970510340518190489}
   - component: {fileID: 1214239261981325399}
+  - component: {fileID: 6335777300600152901}
   m_Layer: 0
   m_Name: car
   m_TagString: Untagged
@@ -863,6 +864,20 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   ImpulseMotorDuration: 200
+--- !u!114 &6335777300600152901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3311311803080157842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6ed770c5db4e6d95f09387102152e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vrCamera: {fileID: 8564684809222554381}
+  regularCamera: {fileID: 2667417928345339248}
 --- !u!1 &3462358815657576675
 GameObject:
   m_ObjectHideFlags: 0
