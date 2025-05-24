@@ -6372,7 +6372,7 @@ Transform:
   m_GameObject: {fileID: 8066956461819461227}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1176, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6527,7 +6527,7 @@ Transform:
   m_GameObject: {fileID: 8564684809222554381}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1997, z: 1.6776}
+  m_LocalPosition: {x: 0, y: 0.0821, z: 1.6776}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6550,7 +6550,7 @@ MonoBehaviour:
   m_OriginBaseGameObject: {fileID: 8564684809222554381}
   m_CameraFloorOffsetObject: {fileID: 8066956461819461227}
   m_RequestedTrackingOriginMode: 0
-  m_CameraYOffset: 0
+  m_CameraYOffset: 1.1176
 --- !u!114 &399873041266739108
 MonoBehaviour:
   m_ObjectHideFlags: 0
