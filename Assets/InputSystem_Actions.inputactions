@@ -1359,7 +1359,7 @@
                 {
                     "name": "",
                     "id": "1b70f369-6b3c-40a7-a3f4-bf114edcef8d",
-                    "path": "<Keyboard>/7",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -1516,6 +1516,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Fire Foam",
+                    "type": "Button",
+                    "id": "d87a9ec8-9d26-4cd7-928e-2ba0a8766261",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1549,6 +1558,28 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Throttle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b465886f-3efc-4112-bdc6-1b37892922c6",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Fire Foam",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a087a015-1e0c-4fad-a707-cf6c6899463a",
+                    "path": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Jet",
+                    "action": "Fire Foam",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

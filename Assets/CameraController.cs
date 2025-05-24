@@ -7,7 +7,8 @@ public class CameraController : MonoBehaviour
 
     private void Awake()
     {
-        vrCamera.SetActive(XRSettings.enabled);
-        regularCamera.SetActive(!XRSettings.enabled);
+        var vr = XRSettings.enabled || false/*temp*/;
+        vrCamera.SetActive(vr);
+        regularCamera.SetActive(!vr);
     }
 }

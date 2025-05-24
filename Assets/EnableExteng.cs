@@ -1,10 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class EnableExteng : MonoBehaviour
 {
     // Array to hold references to 8 GameObjects
     public GameObject[] particleObjects = new GameObject[8];
+
+    public InputActionReference UseInput;
 
     private void Awake()
     {
@@ -18,7 +21,7 @@ public class EnableExteng : MonoBehaviour
     void Update()
     {
         // Enable all objects when 'P' is pressed down
-        if (Input.GetKeyDown(KeyCode.P))
+        if (UseInput.action.WasPressedThisFrame())
         {
             foreach (GameObject obj in particleObjects)
             {
@@ -30,7 +33,7 @@ public class EnableExteng : MonoBehaviour
         }
 
         // Disable all objects when 'P' is released
-        if (Input.GetKeyUp(KeyCode.P))
+        if (UseInput.action.WasReleasedThisFrame())
         {
             foreach (GameObject obj in particleObjects)
             {
