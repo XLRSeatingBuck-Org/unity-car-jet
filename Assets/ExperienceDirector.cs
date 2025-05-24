@@ -13,6 +13,8 @@ public class ExperienceDirector : MonoBehaviour
     public CanvasGroup loadingFader;
     public CanvasGroup loseGroup, winGroup;
 
+    public float loadTime = 2, menuTime = 5;
+    
     private bool _fireExtinguished;
 
     private void Awake()
@@ -30,7 +32,8 @@ public class ExperienceDirector : MonoBehaviour
     private IEnumerator Start()
     {
         var osmLoader = FindAnyObjectByType<OsmLoader>();
-        if (false) yield return new WaitUntil(() => osmLoader.Loaded);
+        if (osmLoader && false/*temp*/) yield return new WaitUntil(() => osmLoader.Loaded);
+        else yield return new WaitForSecondsRealtime(loadTime);
         Debug.Log("loaded!");
         loadingFader.alpha = 0;
         Time.timeScale = 1;
@@ -49,7 +52,7 @@ public class ExperienceDirector : MonoBehaviour
 
     private void Update()
     {
-        if (_fireExtinguished && PlaneCrashController.Instance.StoppedInRunway)
+        if (_fireExtinguished && CrashController.Instance.StoppedAtHome)
         {
             StartCoroutine(OnWin());
         }
@@ -59,7 +62,7 @@ public class ExperienceDirector : MonoBehaviour
     {
         winGroup.alpha = 1;
         Time.timeScale = 0;
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(menuTime);
         Application.Quit();
     }
 
@@ -72,7 +75,7 @@ public class ExperienceDirector : MonoBehaviour
     {
         loseGroup.alpha = 1;
         Time.timeScale = 0;
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(menuTime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

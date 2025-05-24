@@ -1216,6 +1216,8 @@ MonoBehaviour:
   loadingFader: {fileID: 1987734280}
   loseGroup: {fileID: 1595427376}
   winGroup: {fileID: 902553017}
+  loadTime: 2
+  menuTime: 5
 --- !u!114 &603511257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3743,7 +3745,7 @@ GameObject:
   - component: {fileID: 1700688398}
   m_Layer: 0
   m_Name: runway trigger
-  m_TagString: Runway
+  m_TagString: Home
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
