@@ -4,9 +4,7 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Water
   - Home
-  - Runway
   layers:
   - Default
   - TransparentFX
