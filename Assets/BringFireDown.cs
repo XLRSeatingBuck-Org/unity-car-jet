@@ -72,6 +72,12 @@ public class BringDownFire : MonoBehaviour
             {
                 smokeEffect.transform.localScale = Vector3.Lerp(smokeEffectInitialScale, Vector3.zero, timer * otherScaleRate);
             }
+
+            if (fire.transform.localScale.x < .1f)
+            {
+                GetComponent<FireExtinguishTracker>().Extinguished = true;
+                gameObject.SetActive(false);
+            }
         }
     }
 
@@ -88,11 +94,13 @@ public class BringDownFire : MonoBehaviour
     // Optionally, we can reset the scale if needed (for example, when the fire is "extinguished")
     public void ResetFire()
     {
+        gameObject.SetActive(true);
         transform.localScale = initialScale;
         embers.transform.localScale = embersInitialScale;
         fire.transform.localScale = fireInitialScale;
         smokeEffect.transform.localScale = smokeEffectInitialScale;
         timer = 0f;
         isInWater = false;
+        GetComponent<FireExtinguishTracker>().Extinguished = false;
     }
 }

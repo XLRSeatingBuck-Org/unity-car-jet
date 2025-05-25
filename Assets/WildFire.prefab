@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7891520782277615226}
   - component: {fileID: 5061183771709073693}
   - component: {fileID: 8717000016008476415}
+  - component: {fileID: 2868516299490482379}
   m_Layer: 0
   m_Name: WildFire
   m_TagString: Untagged
@@ -4883,6 +4884,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.58, y: 3.91, z: 2.19}
   m_Center: {x: -0.11, y: -0.06, z: -0.02}
+--- !u!114 &2868516299490482379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795700103326414197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09fb9466b4ce44b8ba671ea5c40b973e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1735652132024134394
 GameObject:
   m_ObjectHideFlags: 0

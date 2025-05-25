@@ -30,6 +30,9 @@ public class GasCollision : MonoBehaviour
                 // Scale all other children to (0, 0, 0)
                 child.localScale = Vector3.zero;
             }
+            
+            // tell system we are extinguished
+            other.GetComponent<FireExtinguishTracker>().Extinguished = true;
         }
     }
 

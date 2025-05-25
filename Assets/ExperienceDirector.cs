@@ -32,7 +32,7 @@ public class ExperienceDirector : MonoBehaviour
     private IEnumerator Start()
     {
         var osmLoader = FindAnyObjectByType<OsmLoader>();
-        if (osmLoader && false/*temp*/) yield return new WaitUntil(() => osmLoader.Loaded);
+        if (osmLoader && true/*temp*/) yield return new WaitUntil(() => osmLoader.Loaded);
         else yield return new WaitForSecondsRealtime(loadTime);
         Debug.Log("loaded!");
         loadingFader.alpha = 0;
@@ -42,6 +42,8 @@ public class ExperienceDirector : MonoBehaviour
     [ContextMenu("test extinguish")]
     public void OnFireExtinguished()
     {
+        Debug.Log("extinguished!");
+        
         fireBeacon.SetActive(false);
         homeBeacon.SetActive(true);
         // TODO: maybe put text or something
