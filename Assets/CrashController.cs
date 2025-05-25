@@ -22,6 +22,11 @@ public class CrashController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
     }
 
+    private void OnDestroy()
+    {
+        Instance = null;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         var impulse = collision.impulse.magnitude;

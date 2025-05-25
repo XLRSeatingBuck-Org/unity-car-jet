@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -27,6 +28,11 @@ public class ExperienceDirector : MonoBehaviour
         Time.timeScale = 0;
         loseGroup.alpha = 0;
         winGroup.alpha = 0;
+    }
+
+    private void OnDestroy()
+    {
+        Instance = null;
     }
 
     private IEnumerator Start()
