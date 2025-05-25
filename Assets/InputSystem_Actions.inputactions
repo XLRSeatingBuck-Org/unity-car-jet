@@ -1564,21 +1564,10 @@
                 {
                     "name": "",
                     "id": "b465886f-3efc-4112-bdc6-1b37892922c6",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/p",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Fire Foam",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a087a015-1e0c-4fad-a707-cf6c6899463a",
-                    "path": "<HID::Logitech G920 Driving Force Racing Wheel for Xbox One>/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Jet",
                     "action": "Fire Foam",
                     "isComposite": false,
                     "isPartOfComposite": false
