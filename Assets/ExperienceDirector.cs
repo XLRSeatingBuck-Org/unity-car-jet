@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,21 +14,26 @@ public class ExperienceDirector : MonoBehaviour
     public GameObject fireBeacon, homeBeacon;
     public CanvasGroup loadingFader;
     public CanvasGroup loseGroup, winGroup;
+    public TMP_Text statusText;
 
     public float loadTime = 2, menuTime = 5;
     
     private bool _fireExtinguished;
 
+    private bool isCarScene => SceneManager.GetActiveScene().name == "Cesium Car";
+
     private void Awake()
     {
         Instance = this;
         
-        fireBeacon.SetActive(true);
-        homeBeacon.SetActive(false);
+        fireBeacon.GetComponentInChildren<MeshRenderer>().enabled = true;
+        homeBeacon.GetComponentInChildren<MeshRenderer>().enabled = false;
         loadingFader.alpha = 1;
         Time.timeScale = 0;
         loseGroup.alpha = 0;
         winGroup.alpha = 0;
+        
+        SetStatus(isCarScene ? "Leave station" : "Take off");
     }
 
     private void OnDestroy()
@@ -50,10 +56,12 @@ public class ExperienceDirector : MonoBehaviour
     {
         Debug.Log("extinguished!");
         
-        fireBeacon.SetActive(false);
-        homeBeacon.SetActive(true);
+        fireBeacon.GetComponentInChildren<MeshRenderer>().enabled = false;
+        homeBeacon.GetComponentInChildren<MeshRenderer>().enabled = true;
         // TODO: maybe put text or something
         // TODO: sound
+        
+        SetStatus("Go home (green beacon)");
 
         _fireExtinguished = true;
     }
@@ -85,5 +93,22 @@ public class ExperienceDirector : MonoBehaviour
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(menuTime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void SetStatus(string text)
+    {
+        statusText.text = $"STATUS:\n{text}";
+    }
+
+    public void OnEnterBeacon(GameObject beacon)
+    {
+        Debug.Log($"beacon enter {beacon}", beacon);
+        if (beacon == fireBeacon && !_fireExtinguished) SetStatus("Put out fire");
+        if (beacon == homeBeacon && _fireExtinguished) SetStatus(isCarScene ? "Park" : "Land");
+    }
+    public void OnExitBeacon(GameObject beacon)
+    {
+        Debug.Log($"beacon exit {beacon}", beacon);
+        if (beacon == homeBeacon && !_fireExtinguished) SetStatus("Go to fire (orange beacon)");
     }
 }
