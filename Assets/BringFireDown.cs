@@ -3,7 +3,7 @@ using UnityEngine;
 public class BringDownFire : MonoBehaviour
 {
     [Header("Assign the Water GameObject here")]
-    public GameObject waterObject; // Assign in the Inspector
+    public GameObject waterObject; // Drag your Water GameObject here
 
     private GameObject embers;
     private GameObject fire;
@@ -22,8 +22,8 @@ public class BringDownFire : MonoBehaviour
 
     private float timer = 0f;
     private int waterContactCount = 0;
-    
-    
+
+    private const float maxScale = 2f;
 
     void Start()
     {
@@ -55,7 +55,7 @@ public class BringDownFire : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            // Clamp t values to ensure scale reaches zero
+            // Clamp t values so we eventually reach zero
             float wildfireT = Mathf.Clamp01(timer * wildfireScaleRate);
             float otherT = Mathf.Clamp01(timer * otherScaleRate);
 
@@ -64,38 +64,46 @@ public class BringDownFire : MonoBehaviour
             fire.transform.localScale = Vector3.Lerp(fireInitialScale, Vector3.zero, otherT);
             smokeEffect.transform.localScale = Vector3.Lerp(smokeEffectInitialScale, Vector3.zero, otherT);
 
-            // Check if fire has fully shrunk
-            if (fire.transform.localScale.x <= 0.6f)
+            // Fully extinguish fire when it's small enough
+            if (fire.transform.localScale.x <= 0.53f)
             {
                 GetComponent<FireExtinguishTracker>().Extinguished = true;
                 gameObject.SetActive(false);
             }
         }
-
         else
         {
-            // Grow while not in water
+            // Grow fire if not in water, but stop at maxScale
             growthTimer += Time.deltaTime;
 
             if (growthTimer >= growthInterval)
             {
-                Vector3 growth = new Vector3(growthAmount, growthAmount, growthAmount);
+                if (transform.localScale.x < maxScale)
+                {
+                    Vector3 growth = new Vector3(growthAmount, growthAmount, growthAmount);
 
-                transform.localScale += growth;
-                embers.transform.localScale += growth;
-                fire.transform.localScale += growth;
-                smokeEffect.transform.localScale += growth;
+                    transform.localScale += growth;
+                    embers.transform.localScale += growth;
+                    fire.transform.localScale += growth;
+                    smokeEffect.transform.localScale += growth;
 
-                // Save new scales
-                initialScale = transform.localScale;
-                embersInitialScale = embers.transform.localScale;
-                fireInitialScale = fire.transform.localScale;
-                smokeEffectInitialScale = smokeEffect.transform.localScale;
+                    // Clamp to max scale
+                    transform.localScale = Vector3.Min(transform.localScale, Vector3.one * maxScale);
+                    embers.transform.localScale = Vector3.Min(embers.transform.localScale, Vector3.one * maxScale);
+                    fire.transform.localScale = Vector3.Min(fire.transform.localScale, Vector3.one * maxScale);
+                    smokeEffect.transform.localScale = Vector3.Min(smokeEffect.transform.localScale, Vector3.one * maxScale);
+
+                    // Save new scales for future shrink lerp
+                    initialScale = transform.localScale;
+                    embersInitialScale = embers.transform.localScale;
+                    fireInitialScale = fire.transform.localScale;
+                    smokeEffectInitialScale = smokeEffect.transform.localScale;
+                }
 
                 growthTimer = 0f;
             }
 
-            timer = 0f; // Reset shrink timer
+            timer = 0f; // Reset shrinking timer
         }
     }
 
@@ -105,7 +113,7 @@ public class BringDownFire : MonoBehaviour
         {
             waterContactCount++;
 
-            // Capture scale state at moment of contact
+            // Save scale at time of contact
             initialScale = transform.localScale;
             embersInitialScale = embers.transform.localScale;
             fireInitialScale = fire.transform.localScale;
