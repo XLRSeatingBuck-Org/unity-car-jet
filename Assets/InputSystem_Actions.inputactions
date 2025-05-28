@@ -1563,6 +1563,17 @@
                 },
                 {
                     "name": "",
+                    "id": "3fae42b4-c2a6-46e6-963a-67f392670144",
+                    "path": "<HID::Thustmaster Joystick - HOTAS Warthog>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Jet",
+                    "action": "Fire Foam",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "b465886f-3efc-4112-bdc6-1b37892922c6",
                     "path": "<Keyboard>/p",
                     "interactions": "",
