@@ -31,6 +31,7 @@ public class CarMovement : MonoBehaviour
 		LeftFront.steerAngle = steer * SteerAngle;
 	}
 
+	#if UNITY_EDITOR
 	private void OnGUI()
 	{
 		var gas = GasInput.action.ReadValue<float>();
@@ -44,4 +45,5 @@ public class CarMovement : MonoBehaviour
 		GUILayout.Label($"velocity = {Body.linearVelocity} / {transform.InverseTransformDirection(Body.linearVelocity)}\n" +
 			$"angular velocity = {Body.angularVelocity} / {transform.InverseTransformDirection(Body.angularVelocity)}");
 	}
+	#endif
 }

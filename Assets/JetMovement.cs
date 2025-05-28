@@ -42,6 +42,7 @@ public class JetMovement : MonoBehaviour
 		}
 	}
 
+	#if UNITY_EDITOR
 	private void OnGUI()
 	{
 		var throttle = Throttle.action.ReadValue<float>();
@@ -60,4 +61,5 @@ public class JetMovement : MonoBehaviour
 		var motorPower = Mathf.RoundToInt(SpeedToMotorPowerCurve.Evaluate(localForwardSpeed));
 		GUILayout.Label($"speed motor power = {motorPower}");
 	}
+	#endif
 }
