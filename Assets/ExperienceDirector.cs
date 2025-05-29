@@ -81,13 +81,12 @@ public class ExperienceDirector : MonoBehaviour
         yield return new WaitForSecondsRealtime(menuTime);
         Application.Quit();
     }
+    
+    public enum LoseType { Crashed, Spread }
 
-    public void OnLose()
-    {
-        StartCoroutine(_OnLose());
-    }
+    public void OnLose(LoseType loseType) => StartCoroutine(_OnLose(loseType));
 
-    private IEnumerator _OnLose()
+    private IEnumerator _OnLose(LoseType loseType)
     {
         loseGroup.alpha = 1;
         Time.timeScale = 0;

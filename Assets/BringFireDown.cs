@@ -99,6 +99,12 @@ public class BringDownFire : MonoBehaviour
                     fireInitialScale = fire.transform.localScale;
                     smokeEffectInitialScale = smokeEffect.transform.localScale;
                 }
+                
+                // lose if we've spread too much
+                if (transform.localScale == Vector3.one * maxScale)
+                {
+                    ExperienceDirector.Instance.OnLose(ExperienceDirector.LoseType.Spread);
+                }
 
                 growthTimer = 0f;
             }

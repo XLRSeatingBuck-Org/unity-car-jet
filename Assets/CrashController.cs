@@ -46,7 +46,7 @@ public class CrashController : MonoBehaviour
 
         if (impulse > crashImpulseThreshold)
         {
-            ExperienceDirector.Instance.OnLose();
+            ExperienceDirector.Instance.OnLose(ExperienceDirector.LoseType.Crashed);
         }
     }
 
