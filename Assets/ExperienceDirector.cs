@@ -89,6 +89,14 @@ public class ExperienceDirector : MonoBehaviour
     private IEnumerator _OnLose(LoseType loseType)
     {
         loseGroup.alpha = 1;
+        // set lose text based on how you lost
+        loseGroup.GetComponentInChildren<TMP_Text>().text =
+            loseType switch
+            {
+                LoseType.Crashed => "You crashed!",
+                LoseType.Spread => "The fire spread too big!",
+                _ => throw new ArgumentOutOfRangeException(nameof(loseType), loseType, null)
+            } + "\n" + loseGroup.GetComponentInChildren<TMP_Text>().text;
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(menuTime);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
