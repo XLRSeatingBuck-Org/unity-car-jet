@@ -42,8 +42,8 @@ public class CarMovement : MonoBehaviour
 
 		GUILayout.Label($"wheel rpm = \n{LeftFront.rpm}\t{RightFront.rpm}\n{LeftBack.rpm}\t{RightBack.rpm}");
 
-		GUILayout.Label($"velocity = {Body.linearVelocity} / {transform.InverseTransformDirection(Body.linearVelocity)}\n" +
-			$"angular velocity = {Body.angularVelocity} / {transform.InverseTransformDirection(Body.angularVelocity)}");
+		GUILayout.Label($"velocity = {Body.linearVelocity} / {transform.InverseTransformDirection(Body.linearVelocity)}\n" + 
+		                $"angular velocity = {Body.angularVelocity * Mathf.Rad2Deg} / {transform.InverseTransformDirection(Body.angularVelocity) * Mathf.Rad2Deg}");
 	}
 	#endif
 }

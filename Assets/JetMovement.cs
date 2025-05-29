@@ -382,8 +382,8 @@ public class JetMovement : MonoBehaviour
 		GUILayout.Label($"forward = {localForwardSpeed}\nlift = {liftForce.magnitude}");
 		*/
 
-		GUILayout.Label($"velocity = {Rigidbody.linearVelocity * Mathf.Rad2Deg} / {transform.InverseTransformDirection(Rigidbody.linearVelocity * Mathf.Rad2Deg)}\n" +
-			$"angular velocity = {Rigidbody.angularVelocity * Mathf.Rad2Deg} / {transform.InverseTransformDirection(Rigidbody.angularVelocity * Mathf.Rad2Deg)}");
+		GUILayout.Label($"velocity = {Rigidbody.linearVelocity} / {transform.InverseTransformDirection(Rigidbody.linearVelocity)}\n" + 
+                        $"angular velocity = {Rigidbody.angularVelocity * Mathf.Rad2Deg} / {transform.InverseTransformDirection(Rigidbody.angularVelocity) * Mathf.Rad2Deg}");
 
 		var motorPower = Mathf.RoundToInt(SpeedToMotorPowerCurve.Evaluate(localForwardSpeed));
 		GUILayout.Label($"speed motor power = {motorPower}");
