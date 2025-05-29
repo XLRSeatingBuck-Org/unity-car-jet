@@ -50,6 +50,7 @@ Handles moving the firetruck hose and firing water from it.
 
 Handles collision between water and fire, and properly extinguishing the fire.
 This signals to FireExtinguishTracker when the fire is extinguished.
+This also grows the fire over time, triggering a loss when it gets too big.
 
 # GasCollision
 
