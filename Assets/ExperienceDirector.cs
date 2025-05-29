@@ -82,12 +82,12 @@ public class ExperienceDirector : MonoBehaviour
         Application.Quit();
     }
 
-    public void OnCrash()
+    public void OnLose()
     {
-        StartCoroutine(_OnCrash());
+        StartCoroutine(_OnLose());
     }
 
-    private IEnumerator _OnCrash()
+    private IEnumerator _OnLose()
     {
         loseGroup.alpha = 1;
         Time.timeScale = 0;
