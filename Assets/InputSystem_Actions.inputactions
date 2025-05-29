@@ -1525,6 +1525,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Flaps",
+                    "type": "Button",
+                    "id": "35f06c10-65ba-4a12-9449-f37960219396",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1778,6 +1787,28 @@
                     "processors": "",
                     "groups": ";Jet",
                     "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5afd141-6b62-4935-bb61-ff3e70030811",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Jet",
+                    "action": "Flaps",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "12a9b0cb-8bb4-4017-8fa6-714c9e1dc764",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Flaps",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

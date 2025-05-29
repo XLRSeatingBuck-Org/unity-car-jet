@@ -15,6 +15,7 @@ using UnityEngine.InputSystem;
 public class JetMovement : MonoBehaviour
 {
 	public InputActionReference ThrottleInput, PitchInput, YawInput, RollInput;
+	public InputActionReference FlapsInput;
 
     public AnimationCurve SpeedToMotorPowerCurve;
     
@@ -135,7 +136,10 @@ public class JetMovement : MonoBehaviour
     void UpdateFlaps() {
         if (LocalVelocity.z > flapsRetractSpeed) {
             FlapsDeployed = false;
+        } else if (LocalVelocity.z < flapsRetractSpeed) {
+            FlapsDeployed = FlapsInput.action.IsPressed();
         }
+
     }
 
     void CalculateAngleOfAttack() {
