@@ -7,8 +7,10 @@ using UnityEngine.InputSystem;
 /// <summary>
 /// controls plane movement and physics.
 /// 
-/// based on https://github.com/vazgriz/FlightSim/blob/part-1/Assets/Scripts/Plane.cs
-/// also based on Payton's implementation https://github.com/XLRSeatingBuck-Org/unreal_jet/blob/main/Source/UnrealSim/Jet.cpp
+/// based on:
+/// - plane tutorial https://github.com/vazgriz/FlightSim/blob/part-1/Assets/Scripts/Plane.cs
+/// - plane prefab https://github.com/vazgriz/FlightSim/blob/part-1/Assets/Prefabs/F15.prefab
+/// - Payton's implementation https://github.com/XLRSeatingBuck-Org/unreal_jet/blob/main/Source/UnrealSim/Jet.cpp
 /// </summary>
 public class JetMovement : MonoBehaviour
 {
@@ -18,10 +20,6 @@ public class JetMovement : MonoBehaviour
     
     
 
-    [SerializeField]
-    float maxHealth;
-    [SerializeField]
-    float health;
     [SerializeField]
     float maxThrust;
     [SerializeField]
@@ -370,8 +368,24 @@ public class JetMovement : MonoBehaviour
 
         //calculate again, so that other systems can read this plane's state
         CalculateState(dt);
+        
+        
+        
+        // update haptics
+        {
+		    var localForwardSpeed = Vector3.Project(Rigidbody.linearVelocity, transform.forward).magnitude;
+            
+            var motorPower = Mathf.RoundToInt(SpeedToMotorPowerCurve.Evaluate(localForwardSpeed));
+            // docs recommend 100 ms or more
+            BhapticsLibrary.PlayMotors((int)PositionType.GloveL, Enumerable.Repeat(motorPower, 6).ToArray(), 100);
+            BhapticsLibrary.PlayMotors((int)PositionType.GloveR, Enumerable.Repeat(motorPower, 6).ToArray(), 100);
+            BhapticsLibrary.PlayMotors((int)PositionType.Vest, Enumerable.Repeat(motorPower, 32).ToArray(), 100);
+        }
     }
 
+    
+    
+    
 
 	#if UNITY_EDITOR
 	private void OnGUI()
