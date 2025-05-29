@@ -80,21 +80,10 @@ public class JetMovement : MonoBehaviour
     [SerializeField]
     float airbrakeDrag;
 
-    [Header("Misc")]
-    [SerializeField]
-    List<Collider> landingGear;
-    [SerializeField]
-    PhysicsMaterial landingGearBrakesMaterial;
-    [SerializeField]
-    List<GameObject> graphics;
-    [SerializeField]
-    GameObject crashEffect;
-
     float throttleInput;
     Vector3 controlInput;
 
     Vector3 lastVelocity;
-    PhysicsMaterial landingGearDefaultMaterial;
 
     public Rigidbody Rigidbody { get; private set; }
     public float Throttle { get; private set; }
@@ -115,19 +104,11 @@ public class JetMovement : MonoBehaviour
         }
         private set {
             flapsDeployed = value;
-
-            foreach (var lg in landingGear) {
-                lg.enabled = value;
-            }
         }
     }
 
     void Start() {
         Rigidbody = GetComponent<Rigidbody>();
-
-        if (landingGear.Count > 0) {
-            landingGearDefaultMaterial = landingGear[0].sharedMaterial;
-        }
     }
 
     public void SetThrottleInput(float input) {
@@ -138,7 +119,7 @@ public class JetMovement : MonoBehaviour
         controlInput = input;
     }
 
-    public void ToggleFlaps() {
+    public void ToggleFlaps() { // TODO
         if (LocalVelocity.z < flapsRetractSpeed) {
             FlapsDeployed = !FlapsDeployed;
         }
@@ -146,24 +127,9 @@ public class JetMovement : MonoBehaviour
 
 
     void UpdateThrottle(float dt) {
-        float target = 0;
-        if (throttleInput > 0) target = 1;
+        Throttle = throttleInput;
 
-        //throttle input is [-1, 1]
-        //throttle is [0, 1]
-        Throttle = Utilities.MoveTo(Throttle, target, throttleSpeed * Mathf.Abs(throttleInput), dt);
-
-        AirbrakeDeployed = Throttle == 0 && throttleInput == -1;
-
-        if (AirbrakeDeployed) {
-            foreach (var lg in landingGear) {
-                lg.sharedMaterial = landingGearBrakesMaterial;
-            }
-        } else {
-            foreach (var lg in landingGear) {
-                lg.sharedMaterial = landingGearDefaultMaterial;
-            }
-        }
+        AirbrakeDeployed = Throttle == 0;
     }
 
     void UpdateFlaps() {
@@ -356,6 +322,15 @@ public class JetMovement : MonoBehaviour
         UpdateFlaps();
 
         //handle user input
+        {
+            var throttle = ThrottleInput.action.ReadValue<float>();
+            var pitch = PitchInput.action.ReadValue<float>();
+            var yaw = YawInput.action.ReadValue<float>();
+            var roll = RollInput.action.ReadValue<float>();
+            
+            SetThrottleInput(throttle);
+            SetControlInput(new Vector3(pitch, yaw, roll));
+        }
         UpdateThrottle(dt);
 
         //apply updates
@@ -392,9 +367,9 @@ public class JetMovement : MonoBehaviour
 	private void OnGUI()
 	{
 		var throttle = ThrottleInput.action.ReadValue<float>();
-		var pitch = ThrottleInput.action.ReadValue<float>();
-		var yaw = ThrottleInput.action.ReadValue<float>();
-		var roll = ThrottleInput.action.ReadValue<float>();
+		var pitch = PitchInput.action.ReadValue<float>();
+		var yaw = YawInput.action.ReadValue<float>();
+		var roll = RollInput.action.ReadValue<float>();
 		GUILayout.Label($"throttle = {throttle}\npitch = {pitch}\nyaw = {yaw}\nroll = {roll}");
 
 		var localForwardSpeed = Vector3.Project(Rigidbody.linearVelocity, transform.forward).magnitude;
@@ -408,7 +383,20 @@ public class JetMovement : MonoBehaviour
 
 		var motorPower = Mathf.RoundToInt(SpeedToMotorPowerCurve.Evaluate(localForwardSpeed));
 		GUILayout.Label($"speed motor power = {motorPower}");
-	}
+
+        GUILayout.Label(
+            $"Throttle = {Throttle}\n" +
+            $"EffectiveInput = {EffectiveInput}\n" +
+            $"Velocity = {Velocity}\n" +
+            $"LocalVelocity = {LocalVelocity}\n" +
+            $"LocalGForce = {LocalGForce}\n" +
+            $"LocalAngularVelocity = {LocalAngularVelocity}\n" +
+            $"AngleOfAttack = {AngleOfAttack * Mathf.Rad2Deg}\n" +
+            $"AngleOfAttackYaw = {AngleOfAttackYaw * Mathf.Rad2Deg}\n" +
+            $"AirbrakeDeployed = {AirbrakeDeployed}\n" +
+            $"FlapsDeployed = {FlapsDeployed}\n"
+        );
+    }
 	#endif
 }
 
