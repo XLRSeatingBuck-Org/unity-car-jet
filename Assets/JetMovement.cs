@@ -18,6 +18,7 @@ public class JetMovement : MonoBehaviour
 
     public AnimationCurve SpeedToMotorPowerCurve;
     
+    [Space]
     
 
     [SerializeField]
@@ -191,7 +192,7 @@ public class JetMovement : MonoBehaviour
 
     void CalculateState(float dt) {
         var invRotation = Quaternion.Inverse(Rigidbody.rotation);
-        Velocity = Rigidbody.velocity;
+        Velocity = Rigidbody.linearVelocity;
         LocalVelocity = invRotation * Velocity;  //transform world velocity into local space
         LocalAngularVelocity = invRotation * Rigidbody.angularVelocity;  //transform into local space
 
