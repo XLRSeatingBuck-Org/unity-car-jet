@@ -44,4 +44,6 @@ Keyboard/controller input occasionally does not work. Restarting the application
 
 Cesium seems to cause occasional random crashes. We cannot control this. Restart the program to fix.
 
+---
+
 For other cases, see the test cases in the [technical documentation](docs/technical-docs.md).
