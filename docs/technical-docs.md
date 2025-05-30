@@ -113,4 +113,6 @@ While both experiences are complete and immersive, they are very much still prot
 Both visuals and realism could be vastly improved, given more time.
 For example, the fire simulation is currently rather basic. It could be expanded to destroy things as it spreads.
 Additional scenarios and factors can be added, such as weather events and turbulence.
+Biometrics could be implemented into the system to read heartrate and potentially adjust difficulty to make a more pleasant experience.
+The simulation could be connected to a multi-screen or multi-projector display for more immersion.
 Finally, the VR mode could be expanded upon to allow controller input and cockpit interaction.
