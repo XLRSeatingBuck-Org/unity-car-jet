@@ -1,6 +1,6 @@
 ﻿# Unity Firefighting Simulation
 
-## Overview, Purpose, and Features
+# Overview, Purpose, and Features
 
 Interactive Fire Suppression Simulation
 
@@ -13,21 +13,21 @@ The experiences can also provide haptic feedback via the bHaptics TactGlove and 
 
 See our website ([car](https://xlrseatingbuck-org.github.io/unity-car.html)) ([plane](https://xlrseatingbuck-org.github.io/unity-plane.html)) for more info.
 
-## Installation
+# Installation and Setup
 
 1. Click the "Release" button on the left.
 2. Under "Assets", click the first zip file to download the program.
 3. Extract and double click unity-car-jet.exe.
 4. See the [user manual](docs/user-manual.md) for instructions and controls.
 
-## Libraries
+# Libraries
 - Unity
 - Cesium
 - bHaptics SDK
 - OpenXR
 - CityEngine
 
-## Documentation
+# Deployment and Documentation
 See the [user manual](docs/user-manual.md) and [technical documentation](docs/technical-docs.md).
 
 # Maintenance
