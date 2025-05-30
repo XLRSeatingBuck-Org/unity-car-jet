@@ -21,14 +21,16 @@ This document provides a brief manual of both the firetruck and plane project.
 
 ### Keyboard
 
-- W: move forward (or reverse, if holding R)
-- S: brake
-- A: turn left
-- D: turn right
-- left arrow: move hose left
-- right arrow: move hose right
-- space: fire hose
-- R: hold to reverse
+| Button | Action |
+| --- | --- |
+| W | move forward (or reverse, if holding R) |
+| S | brake |
+| A | turn left |
+| D | turn right |
+| left arrow | move hose left |
+| right arrow | move hose right |
+| space | fire hose |
+| R | hold to reverse |
 
 ## Plane
 
@@ -40,9 +42,11 @@ This document provides a brief manual of both the firetruck and plane project.
 
 #### Keyboard
 
-- space: fire thrusters
-- W/S: adjust pitch
-- A/D: adjust yaw
-- Q/E: adjust roll
-- P: release foam
-- shift: hold to use airflaps
+| Button | Action |
+| --- | --- |
+| space | fire thrusters |
+| W / S | adjust pitch |
+| A / D | adjust yaw |
+| Q / E | adjust roll |
+| P | release foam |
+| shift | hold to use airflaps |
