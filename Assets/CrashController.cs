@@ -3,6 +3,9 @@ using System.Linq;
 using Bhaptics.SDK2;
 using UnityEngine;
 
+/// <summary>
+/// detects crashing and controls haptics
+/// </summary>
 [RequireComponent(typeof(Rigidbody))]
 public class CrashController : MonoBehaviour
 {
@@ -31,6 +34,7 @@ public class CrashController : MonoBehaviour
     {
         var impulse = collision.impulse.magnitude;
 
+        // control motors
         var motorPower = Mathf.RoundToInt(ImpulseToMotorPowerCurve.Evaluate(impulse));
         BhapticsLibrary.PlayMotors((int)PositionType.GloveL, Enumerable.Repeat(motorPower, 6).ToArray(), ImpulseMotorDuration);
         BhapticsLibrary.PlayMotors((int)PositionType.GloveR, Enumerable.Repeat(motorPower, 6).ToArray(), ImpulseMotorDuration);
@@ -39,17 +43,20 @@ public class CrashController : MonoBehaviour
         Debug.Log($"impulse = {impulse}, vel = {collision.relativeVelocity.magnitude}\n" +
                   $"impulse motor power = {ImpulseMotorDuration}, at home = {_atHome}");
         
+        // be more lenient with impacts when at home
         if (_atHome)
         {
             impulse /= 10;
         }
 
+        // detect crash
         if (impulse > crashImpulseThreshold)
         {
             ExperienceDirector.Instance.OnLose(ExperienceDirector.LoseType.Crashed);
         }
     }
 
+    // detect when at home
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Home")) _atHome = true;

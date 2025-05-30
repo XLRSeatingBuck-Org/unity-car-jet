@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// handles moving the fire hose with input
+/// </summary>
 public class HoseMovement : MonoBehaviour
 {
     // Rotation speed (how much it rotates per second)

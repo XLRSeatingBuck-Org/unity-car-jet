@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.XR;
 
+/// <summary>
+/// set up the right camera if in vr or not
+/// </summary>
 public class CameraController : MonoBehaviour
 {
     public GameObject vrCamera, regularCamera;

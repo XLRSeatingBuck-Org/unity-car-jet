@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// handles ui logic for start scene
+/// </summary>
 public class TitleController : MonoBehaviour
 {
     private void Awake()

@@ -1,6 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
+/// <summary>
+/// signal when the player enters or exits the range of this beacon
+/// </summary>
 public class BeaconTrigger : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)

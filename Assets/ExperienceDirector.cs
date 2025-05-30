@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// controls the main experience (moving beacons around, displaying text maybe, etc)
+/// controls the main experience (beacons, status, win/lose scenarios)
 /// </summary>
 public class ExperienceDirector : MonoBehaviour
 {
@@ -26,6 +26,7 @@ public class ExperienceDirector : MonoBehaviour
     {
         Instance = this;
         
+        // set initial state
         fireBeacon.GetComponentInChildren<MeshRenderer>().enabled = true;
         homeBeacon.GetComponentInChildren<MeshRenderer>().enabled = false;
         loadingFader.alpha = 1;
@@ -43,6 +44,7 @@ public class ExperienceDirector : MonoBehaviour
 
     private IEnumerator Start()
     {
+        // do loading screen
         var osmLoader = FindAnyObjectByType<OsmLoader>();
         if (osmLoader) yield return new WaitUntil(() => osmLoader.Loaded);
         else yield return new WaitForSecondsRealtime(loadTime);
@@ -56,9 +58,9 @@ public class ExperienceDirector : MonoBehaviour
     {
         Debug.Log("extinguished!");
         
+        // change beacons
         fireBeacon.GetComponentInChildren<MeshRenderer>().enabled = false;
         homeBeacon.GetComponentInChildren<MeshRenderer>().enabled = true;
-        // TODO: maybe put text or something
         // TODO: sound
         
         SetStatus("Go home (green beacon)");
@@ -68,6 +70,7 @@ public class ExperienceDirector : MonoBehaviour
 
     private void Update()
     {
+        // check if won
         if (_fireExtinguished && CrashController.Instance.StoppedAtHome)
         {
             StartCoroutine(OnWin());
@@ -76,6 +79,7 @@ public class ExperienceDirector : MonoBehaviour
 
     private IEnumerator OnWin()
     {
+        // show win screen
         winGroup.alpha = 1;
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(menuTime);
@@ -107,6 +111,7 @@ public class ExperienceDirector : MonoBehaviour
         statusText.text = $"STATUS:\n{text}";
     }
 
+    // change status based on beacon triggers
     public void OnEnterBeacon(GameObject beacon)
     {
         Debug.Log($"beacon enter {beacon}", beacon);

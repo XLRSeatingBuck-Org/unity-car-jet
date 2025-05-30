@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// bring down the fire when in contact with water
+/// </summary>
 public class BringDownFire : MonoBehaviour
 {
     [Header("Assign the Water GameObject here")]

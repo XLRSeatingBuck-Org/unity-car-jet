@@ -9,6 +9,9 @@ using Unity.Mathematics;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
+/// <summary>
+/// handles loading osm extract and placing buildings/trees
+/// </summary>
 public class OsmLoader : MonoBehaviour
 {
 	public TextAsset XmlToLoad;

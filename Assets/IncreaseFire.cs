@@ -1,6 +1,9 @@
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// increase all fires in a wildfire
+/// </summary>
 public class IncreaseFire : MonoBehaviour
 {
     public GameObject[] wildfires; // Assign these in the Inspector

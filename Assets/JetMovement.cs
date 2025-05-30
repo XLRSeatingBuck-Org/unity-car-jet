@@ -112,6 +112,7 @@ public class JetMovement : MonoBehaviour
         Rigidbody = GetComponent<Rigidbody>();
     }
 
+    /* handle input */
     public void SetThrottleInput(float input) {
         throttleInput = input;
     }
@@ -119,8 +120,6 @@ public class JetMovement : MonoBehaviour
     public void SetControlInput(Vector3 input) {
         controlInput = input;
     }
-
-
 
     void UpdateThrottle(float dt) {
         Throttle = throttleInput;
@@ -136,7 +135,9 @@ public class JetMovement : MonoBehaviour
         }
 
     }
-
+    
+    
+    /* calculations */
     void CalculateAngleOfAttack() {
         if (LocalVelocity.sqrMagnitude < 0.1f) {
             AngleOfAttack = 0;
@@ -164,6 +165,7 @@ public class JetMovement : MonoBehaviour
         CalculateAngleOfAttack();
     }
 
+    /* update state and forces */
     void UpdateThrust() {
         Rigidbody.AddRelativeForce(Throttle * maxThrust * Vector3.forward);
     }
@@ -216,6 +218,7 @@ public class JetMovement : MonoBehaviour
         float flapsLiftPower = FlapsDeployed ? this.flapsLiftPower : 0;
         float flapsAOABias = FlapsDeployed ? this.flapsAOABias : 0;
 
+        // do lift from all flaps
         var liftForce = CalculateLift(
             AngleOfAttack + (flapsAOABias * Mathf.Deg2Rad), Vector3.right,
             liftPower + flapsLiftPower,
@@ -286,6 +289,7 @@ public class JetMovement : MonoBehaviour
 
         var gForceScaling = CalculateGLimiter(controlInput, turnSpeed * Mathf.Deg2Rad * steeringPower);
 
+        // get steering from input
         var targetAV = Vector3.Scale(controlInput, turnSpeed * steeringPower * gForceScaling);
         var av = LocalAngularVelocity * Mathf.Rad2Deg;
 

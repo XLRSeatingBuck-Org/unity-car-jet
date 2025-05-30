@@ -2,6 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// turn on/off fire foam with button press
+/// </summary>
 public class EnableExteng : MonoBehaviour
 {
     // Array to hold references to 8 GameObjects

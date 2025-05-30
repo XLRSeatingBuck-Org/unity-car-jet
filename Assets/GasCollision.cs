@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// handles collision between plane foam and fire, extinguishing as necessary
+/// </summary>
 public class GasCollision : MonoBehaviour
 {
     void OnParticleCollision(GameObject other)

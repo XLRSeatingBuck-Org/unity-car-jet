@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// handles all input/movement/physics with the car
+/// </summary>
 public class CarMovement : MonoBehaviour
 {
 	public InputActionReference GasInput, BrakeInput, SteerInput, GearRInput;
@@ -13,6 +16,7 @@ public class CarMovement : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		// get input
 		var gas = GasInput.action.ReadValue<float>();
 		var brake = BrakeInput.action.ReadValue<float>();
 		var steer = SteerInput.action.ReadValue<float>();
@@ -20,6 +24,7 @@ public class CarMovement : MonoBehaviour
 
 		gas *= reverse ? -1 : 1;
 
+		// apply forces
 		LeftBack.motorTorque = gas * GasTorque;
 		LeftBack.brakeTorque = brake * BrakeTorque;
 		RightBack.motorTorque = gas * GasTorque;
