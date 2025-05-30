@@ -75,5 +75,12 @@ Similar to the behavior of BringFireDown, this grows the fire over time, trigger
 ## CameraController
 
 Handles camera switching based on whether the user is in VR or not.
+Also changes the UI appropriately to be visible in VR.
 
+# Future Enhancements
  
+While both experiences are complete and immersive, they are very much still prototypes.
+Both visuals and realism could be vastly improved, given more time.
+For example, the fire simulation is currently rather basic. It could be expanded to destroy things as it spreads.
+Additional scenarios and factors can be added, such as weather events and turbulence.
+Finally, the VR mode could be expanded upon to allow controller input and cockpit interaction.
