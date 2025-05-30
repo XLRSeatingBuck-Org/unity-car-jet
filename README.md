@@ -1,6 +1,6 @@
 ﻿# Unity Firefighting Simulation
 
-## Overview and Purpose
+## Overview, Purpose, and Features
 
 Interactive Fire Suppression Simulation
 
