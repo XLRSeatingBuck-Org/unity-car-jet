@@ -561,9 +561,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The fire spread too big!
-
-    You lost!
+  m_text: 'You lost!
 
     Starting over...'
   m_isRightToLeft: 0

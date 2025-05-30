@@ -79,7 +79,7 @@ public class ExperienceDirector : MonoBehaviour
         winGroup.alpha = 1;
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(menuTime);
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
     
     public enum LoseType { Crashed, Spread }
