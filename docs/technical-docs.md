@@ -31,6 +31,7 @@ Used to track if all fires have been extinguished, and reports this state to Exp
 ## CrashController
 
 Handles collision between a vehicle and any other surface.
+Triggers haptic feedback on collision.
 
 ## CarMovement
 
@@ -39,8 +40,9 @@ Main movement class for the firetruck. Gets input from controllers and applies f
 ## JetMovement
 
 Main movement class for the aeriel firefighter.
-Gets input from controllers and applies forces to the plane. Also handles the rest of flight physics, including
-TODO
+Gets input from controllers and applies forces to the plane. Handles all of the flight physics, including
+simulating drag, calculating lift based on area of attack, and controlling steering/flaps.
+Finally, this applies basic haptic vibration depending on the speed of the plane.
 
 # HoseController
 
