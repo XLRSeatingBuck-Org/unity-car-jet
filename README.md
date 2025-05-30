@@ -29,3 +29,19 @@ See our website ([car](https://xlrseatingbuck-org.github.io/unity-car.html)) ([p
 
 ## Documentation
 See the [user manual](docs/user-manual.md) and [technical documentation](docs/technical-docs.md).
+
+# Maintenance
+
+This application is not a service, so it does not require active maintenance to function. Simply download the release and run it.
+
+# Troubleshooting
+
+## Input does not work
+
+Keyboard/controller input occasionally does not work. Restarting the application fixes this.
+
+## The program crashes
+
+Cesium seems to cause occasional random crashes. We cannot control this. Restart the program to fix.
+
+For other cases, see the test cases in the [technical documentation](docs/technical-docs.md).
