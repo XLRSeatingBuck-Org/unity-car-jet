@@ -58,6 +58,10 @@ Handles shooting foam out of the plane.
 Extinguishes the fire when the foam touches the fire.
 This signals to FireExtinguishTracker when the fire is extinguished.
 
+# IncreaseFire
+
+Similar to the behavior of BringFireDown, this grows the fire over time, triggering a loss when it gets too big.
+
 # CameraController
 
 Handles camera switching based on whether the user is in VR or not.
