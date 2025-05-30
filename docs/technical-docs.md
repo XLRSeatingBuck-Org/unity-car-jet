@@ -2,11 +2,11 @@
 
 See our website ([car](https://xlrseatingbuck-org.github.io/unity-car.html)) ([plane](https://xlrseatingbuck-org.github.io/unity-plane.html)).
 
-![main activity diagram](images/main%20activity.drawio.png | width=100))
+![main activity diagram](images/main%20activity.drawio.png)
 
 # Classes
 
-![main class diagram](images/class%20diagram.drawio.png | width=100))
+![main class diagram](images/class%20diagram.drawio.png)
 
 ## TitleController
 
