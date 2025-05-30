@@ -10,15 +10,17 @@ See our website ([car](https://xlrseatingbuck-org.github.io/unity-car.html)) ([p
 
 ![main class diagram](images/class_diagram.drawio.png)
 
+## Project Overview
+
+This simulation is set in a realistic 3D environment constructed using Cesium for Unity, allowing for accurate geospatial data integration. The environment was set up following the official Cesium documentation, enabling real-world terrain and building placement. The simulation supports both VR and non-VR modes, allowing users to switch seamlessly between the two.
+
 ## TitleController
 
 Simple ui logic for handling button presses to go to the correct scene from the starting scene.
 
 ## ExperienceDirector
 
-The top level class for the entire project.
-Stores the general state of the simulation, and reports what to do next back to the user.
-Also reports a win or loss back to the user, and restarts or exits the game.
+The top-level class for the entire project. Stores the general state of the simulation and determines what should happen next. It also tracks win/loss conditions and handles restarting or exiting the game.
 
 ## OsmLoader
 
@@ -31,13 +33,11 @@ Tracks whether a vehicle is in range of a given marker. Reports this state to th
 
 ## FireExtinguishTracker
 
-Stores the “extinguished” state of an individual fire.
-Used to track if all fires have been extinguished, and reports this state to ExperienceDirector.
+Tracks the extinguished state of each fire in the simulation. Communicates with the ExperienceDirector to determine if all fires have been put out.
 
 ## CrashController
 
-Handles collision between a vehicle and any other surface.
-Triggers haptic feedback on collision.
+Manages collisions between the vehicle and the environment. Triggers haptic feedback to enhance realism upon impact.
 
 ## CarMovement
 
@@ -52,7 +52,7 @@ Finally, this applies basic haptic vibration depending on the speed of the plane
 
 ## HoseController
 
-Handles moving the firetruck hose and firing water from it.
+Enables movement and aiming of the firetruck hose. Controls water spray to extinguish fires.
 
 ## EnableExteng
 
