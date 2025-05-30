@@ -8,6 +8,10 @@ See our website ([car](https://xlrseatingbuck-org.github.io/unity-car.html)) ([p
 
 ![main class diagram](images/class%20diagram.drawio.png)
 
+## TitleController
+
+Simple ui logic for handling button presses to go to the correct scene from the starting scene.
+
 ## ExperienceDirector
 
 The top level class for the entire project.
@@ -44,27 +48,31 @@ Gets input from controllers and applies forces to the plane. Handles all of the 
 simulating drag, calculating lift based on area of attack, and controlling steering/flaps.
 Finally, this applies basic haptic vibration depending on the speed of the plane.
 
-# HoseController
+## HoseController
 
 Handles moving the firetruck hose and firing water from it.
 
-# BringFireDown
+## EnableExteng
+
+Handles the releasing of foam from the plane.
+
+## BringFireDown
 
 Handles collision between water and fire, and properly extinguishing the fire.
 This signals to FireExtinguishTracker when the fire is extinguished.
 This also grows the fire over time, triggering a loss when it gets too big.
 
-# GasCollision
+## GasCollision
 
 Handles shooting foam out of the plane.
 Extinguishes the fire when the foam touches the fire.
 This signals to FireExtinguishTracker when the fire is extinguished.
 
-# IncreaseFire
+## IncreaseFire
 
 Similar to the behavior of BringFireDown, this grows the fire over time, triggering a loss when it gets too big.
 
-# CameraController
+## CameraController
 
 Handles camera switching based on whether the user is in VR or not.
 
