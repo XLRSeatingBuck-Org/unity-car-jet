@@ -6,6 +6,8 @@ This document provides a brief manual of both the firetruck and plane project.
 
 1. Select the experience from the main menu.
 2. Follow the instructions in the bottom right corner of the screen ("STATUS: ______")
+    - The main objective is to go to the fire, put it out with water or foam, and return home.
+    - You will use the controls below and the STATUS to accomplish this.
 
 # Controls
 
