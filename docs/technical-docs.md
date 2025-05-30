@@ -1,12 +1,14 @@
-﻿# Architecture and Design
+﻿# Technical Documentation
+
+# Architecture and Design
 
 See our website ([car](https://xlrseatingbuck-org.github.io/unity-car.html)) ([plane](https://xlrseatingbuck-org.github.io/unity-plane.html)).
 
-![main activity diagram](images/main%20activity.drawio.png)
+![main activity diagram](images/main_activity.drawio.png)
 
 # Classes
 
-![main class diagram](images/class%20diagram.drawio.png)
+![main class diagram](images/class_diagram.drawio.png)
 
 ## TitleController
 
