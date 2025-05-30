@@ -2,11 +2,11 @@
 
 See our website ([car](https://xlrseatingbuck-org.github.io/unity-car.html)) ([plane](https://xlrseatingbuck-org.github.io/unity-plane.html)).
 
-TODO MAIN ACTIVITY HERE
+![main activity diagram](images/main%20activity.drawio.png)
 
 # Classes
 
-TODO CLASS DIAGRAM HERE
+![main class diagram](images/class%20diagram.drawio.png)
 
 ## ExperienceDirector
 
