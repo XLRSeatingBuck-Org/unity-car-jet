@@ -856,8 +856,8 @@ MonoBehaviour:
   flapsAOABias: 1
   flapsDrag: 50
   flapsRetractSpeed: 215
-  turnSpeed: {x: 30, y: 15, z: 45}
-  turnAcceleration: {x: 60, y: 30, z: 90}
+  turnSpeed: {x: 30, y: 15, z: 90}
+  turnAcceleration: {x: 60, y: 30, z: 180}
   steeringCurve:
     serializedVersion: 2
     m_Curve:

@@ -1793,7 +1793,7 @@
                 {
                     "name": "",
                     "id": "d5afd141-6b62-4935-bb61-ff3e70030811",
-                    "path": "",
+                    "path": "<HID::Thrustmaster Throttle - HOTAS Warthog>/button22",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Jet",
