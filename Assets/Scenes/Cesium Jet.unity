@@ -240,13 +240,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365860681}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00005895156, y: -0.70576435, z: -0.000019514197, w: 0.7084467}
+  m_LocalRotation: {x: -0.000058827776, y: -0.7012989, z: -0.000019884244, w: 0.7128674}
   m_LocalPosition: {x: 4833.3613, y: 6.6696734, z: 2465.6553}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000012, y: 1, z: 1.0000012}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1369233546}
-  m_LocalEulerAnglesHint: {x: -0.043, y: -89.653, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.006, y: -89.063, z: 0.003}
 --- !u!114 &365860683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,19 +263,19 @@ MonoBehaviour:
   _detectTransformChanges: 1
   _localToGlobeFixedMatrix:
     c0:
-      x: 0.3258347110892928
-      y: 0.5169844959313958
-      z: 0.7915546887541648
+      x: 0.3364672844894398
+      y: 0.5102861176651807
+      z: 0.791454552714014
       w: 0
     c1:
-      x: -0.41779718596682514
-      y: -0.6723196641227757
-      z: 0.611090648457363
+      x: -0.41779718594960596
+      y: -0.6723196641225038
+      z: 0.6110906484694352
       w: 0
     c2:
-      x: -0.8481021733385128
-      y: 0.5298238663907999
-      z: 0.0030704159295800873
+      x: -0.8439415335969277
+      y: 0.5362794959998501
+      z: 0.013017467705098717
       w: 0
     c3:
       x: -2663728.3670271426
@@ -2155,31 +2155,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7084462
+      value: 0.7128674
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000116903764
+      value: -0.000058827776
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7057641
+      value: -0.7012989
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0009825425
+      value: -0.000019884248
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.043
+      value: -0.006
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -89.653
+      value: -89.063
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 0.003
       objectReference: {fileID: 0}
     - target: {fileID: 8976870312817862009, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: moveWithTransform
@@ -2239,19 +2239,19 @@ MonoBehaviour:
   _detectTransformChanges: 1
   _localToGlobeFixedMatrix:
     c0:
-      x: 0.32636939952161154
-      y: 0.517847029252547
-      z: 0.7907701619182583
+      x: 0.3364672844916072
+      y: 0.5102861176686677
+      z: 0.7914545527108444
       w: 0
     c1:
-      x: -0.41615595804580235
-      y: -0.672418989513158
-      z: 0.6121004175174558
+      x: -0.41779718594355436
+      y: -0.6723196641225935
+      z: 0.6110906484734738
       w: 0
     c2:
-      x: -0.8487032560417234
-      y: 0.5288545600201814
-      z: 0.003951855271933976
+      x: -0.8439415335990595
+      y: 0.5362794959964199
+      z: 0.013017467708217111
       w: 0
     c3:
       x: -2663728.3670271426
