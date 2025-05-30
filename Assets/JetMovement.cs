@@ -120,11 +120,6 @@ public class JetMovement : MonoBehaviour
         controlInput = input;
     }
 
-    public void ToggleFlaps() { // TODO
-        if (LocalVelocity.z < flapsRetractSpeed) {
-            FlapsDeployed = !FlapsDeployed;
-        }
-    }
 
 
     void UpdateThrottle(float dt) {

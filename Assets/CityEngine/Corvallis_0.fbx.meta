@@ -5,6 +5,41 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foliage__leafcard_1_mat
+    second: {fileID: 2100000, guid: 5a5af21b50ff0444db3f3a4315a58f9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foliage__leafcard_2_mat
+    second: {fileID: 2100000, guid: d165bed14cbfb834e951e80f40e42c08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Foliage__leafcard_mat
+    second: {fileID: 2100000, guid: a0200c3f29b366c40ac52f126832a68a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Planting_1_mat
+    second: {fileID: 2100000, guid: 74067fab0e6f07d4f93ea48cf3812f25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Planting_2_mat
+    second: {fileID: 2100000, guid: 0a24fb596d4c92e4f9d81a16ebdd98f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Planting_3_mat
+    second: {fileID: 2100000, guid: 2a7b120d34d85f142af83893b128a748, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Planting_mat
+    second: {fileID: 2100000, guid: f9ed8b3f8c8431e4c9135e54f7b08027, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Ash_Bark_Diffuse
