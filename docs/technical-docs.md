@@ -79,6 +79,21 @@ Similar to the behavior of BringFireDown, this grows the fire over time, trigger
 Handles camera switching based on whether the user is in VR or not.
 Also changes the UI appropriately to be visible in VR.
 
+# Building and Releasing
+
+1. Open Unity
+2. Go to File > Build Profiles
+3. Go to the Windows platform and click Build
+4. Make a zip file from the build folder you just built to
+5. [Create a new release on the repository](https://github.com/XLRSeatingBuck-Org/unity-car-jet/releases/new)
+
+# Testing
+
+This being in a game engine means it's rather difficult to test with any level of granularity.
+Therefore, there is no automated testing.
+Instead, it's recommended to go through each experience and try each condition in the main activity.
+If any of them are broken or feel wrong, tweak until it is correct.
+
 # Future Enhancements
  
 While both experiences are complete and immersive, they are very much still prototypes.
