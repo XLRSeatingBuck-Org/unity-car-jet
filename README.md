@@ -38,7 +38,7 @@ This application is not a service, so it does not require active maintenance to 
 
 ## Input does not work
 
-Keyboard/controller input occasionally does not work. Restarting the application fixes this.
+Keyboard/controller input occasionally does not work. Restarting the application fixes this. For controllers, make sure all of them are plugged in.
 
 ## The program crashes
 
