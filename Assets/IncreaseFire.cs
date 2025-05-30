@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class IncreaseFire : MonoBehaviour
@@ -20,6 +21,13 @@ public class IncreaseFire : MonoBehaviour
                 if (!ReachedMaxScale(wildfire.transform.localScale))
                 {
                     wildfire.transform.localScale = IncreaseAndClamp(wildfire.transform.localScale);
+                }
+                else
+                {
+                    // if any fire gets too big, lose
+                    ExperienceDirector.Instance.OnLose(ExperienceDirector.LoseType.Spread);
+                    enabled = false;
+                    return;
                 }
 
                 // Scale each child if not at max
