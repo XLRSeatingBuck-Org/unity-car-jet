@@ -94,18 +94,18 @@ Everything works in the current build. If anything breaks, refer back to these c
 
 | Test Case | Succeeds? | 
 | --- | --- |
-| Start at airport or fire station | ✅ |
-| Fire beacon exists at fire | ✅ |
-| Can take off airplane or leave fire station | ✅ |
-| Can aim fire hose on fire truck | ✅ |
-| Can fire water/foam from the fire plane or fire truck | ✅ |
-| Fire expands over time | ✅ |
-| You lose if fire gets too big | ✅ |
-| Fire reduces when in contact with water/foam | ✅ |
-| Extinguishing all the fire instructs you to fly/drive home | ✅ |
-| You can fly/drive back home | ✅ |
-| Crashing into a surface results in a loss | ✅ |
-| You can land at the airport or pull into fire station | ✅ |
+| Start at airport or fire station | ✓ |
+| Fire beacon exists at fire | ✓ |
+| Can take off airplane or leave fire station | ✓ |
+| Can aim fire hose on fire truck | ✓ |
+| Can fire water/foam from the fire plane or fire truck | ✓ |
+| Fire expands over time | ✓ |
+| You lose if fire gets too big | ✓ |
+| Fire reduces when in contact with water/foam | ✓ |
+| Extinguishing all the fire instructs you to fly/drive home | ✓ |
+| You can fly/drive back home | ✓ |
+| Crashing into a surface results in a loss | ✓ |
+| You can land at the airport or pull into fire station | ✓ |
 
 # Future Enhancements
  
