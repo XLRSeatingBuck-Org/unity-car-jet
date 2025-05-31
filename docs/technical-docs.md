@@ -6,13 +6,13 @@ See our website ([car](https://xlrseatingbuck-org.github.io/unity-car.html)) ([p
 
 ![main activity diagram](images/main_activity.drawio.png)
 
-# Classes
-
-![main class diagram](images/class_diagram.drawio.png)
-
 ## Project Overview
 
 This simulation is set in a realistic 3D environment constructed using Cesium for Unity, allowing for accurate geospatial data integration. The environment was set up following the official Cesium documentation, enabling real-world terrain and building placement. The simulation supports both VR and non-VR modes, allowing users to switch seamlessly between the two.
+
+# Classes
+
+![main class diagram](images/class_diagram.drawio.png)
 
 ## TitleController
 
