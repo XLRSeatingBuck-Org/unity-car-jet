@@ -32,6 +32,7 @@ This document provides a brief manual of both the firetruck and plane project.
 | right arrow | move hose right |
 | space | fire hose |
 | R | hold to reverse |
+| tab | switch camera |
 
 ## Plane
 
@@ -51,3 +52,4 @@ This document provides a brief manual of both the firetruck and plane project.
 | Q / E | adjust roll |
 | P | release foam |
 | shift | hold to use airflaps |
+| tab | switch camera |
