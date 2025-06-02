@@ -21,6 +21,7 @@ See our website ([car](https://xlrseatingbuck-org.github.io/unity-car.html)) ([p
 4. See the [user manual](docs/user-manual.md) for instructions and controls.
 
 # Libraries
+
 - Unity
 - Cesium
 - bHaptics SDK
@@ -28,6 +29,7 @@ See our website ([car](https://xlrseatingbuck-org.github.io/unity-car.html)) ([p
 - CityEngine
 
 # Documentation and Building
+
 See the [user manual](docs/user-manual.md) and [technical documentation](docs/technical-docs.md).
 
 # Maintenance
