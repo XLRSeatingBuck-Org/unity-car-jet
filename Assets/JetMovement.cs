@@ -18,6 +18,11 @@ public class JetMovement : MonoBehaviour
 	public InputActionReference FlapsInput;
 
     public AnimationCurve SpeedToMotorPowerCurve;
+
+    /// <summary>
+    /// apply a force up at this position, scaled by this scale
+    /// </summary>
+    public Transform DownwardTorqueForce;
     
     [Space]
     
@@ -189,6 +194,9 @@ public class JetMovement : MonoBehaviour
         var drag = coefficient.magnitude * lv2 * -lv.normalized;    //drag is opposite direction of velocity
 
         Rigidbody.AddRelativeForce(drag);
+        
+        // make the plane tilt downward when falling
+        Rigidbody.AddForceAtPosition(Vector3.up * (Mathf.Sqrt(Mathf.Abs(-Rigidbody.linearVelocity.y)) * DownwardTorqueForce.localScale.x), DownwardTorqueForce.position);
     }
 
     Vector3 CalculateLift(float angleOfAttack, Vector3 rightAxis, float liftPower, AnimationCurve aoaCurve, AnimationCurve inducedDragCurve) {
