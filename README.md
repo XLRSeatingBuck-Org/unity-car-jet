@@ -15,7 +15,7 @@ See our website ([car](https://xlrseatingbuck-org.github.io/unity-car.html)) ([p
 
 # Installation and Setup
 
-1. Click the "Release" button on the left.
+1. Go to the [latest release](https://github.com/XLRSeatingBuck-Org/unity-car-jet/releases/latest).
 2. Under "Assets", click the first zip file to download the program.
 3. Extract and double click unity-car-jet.exe.
 4. See the [user manual](docs/user-manual.md) for instructions and controls.
