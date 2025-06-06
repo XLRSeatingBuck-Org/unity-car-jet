@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.XR;
 
 /// <summary>
@@ -7,6 +9,7 @@ using UnityEngine.XR;
 public class CameraController : MonoBehaviour
 {
     public GameObject vrCamera, regularCamera;
+    public InputActionReference switchCameraInput;
 
     private void Start()
     {
@@ -26,6 +29,15 @@ public class CameraController : MonoBehaviour
             ui.transform.localPosition = new(0, 0, .5f);
             ui.transform.localRotation = Quaternion.identity;
             ui.transform.localScale = Vector3.one * .0005f;
+        }
+    }
+
+    private void Update()
+    {
+        if (switchCameraInput.action.WasPressedThisFrame())
+        {
+            vrCamera.SetActive(!vrCamera.activeSelf);
+            regularCamera.SetActive(!regularCamera.activeSelf);
         }
     }
 }

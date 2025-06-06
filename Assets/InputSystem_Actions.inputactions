@@ -1111,6 +1111,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Switch Camera",
+                    "type": "Button",
+                    "id": "1135ab3e-b0a6-4402-be62-82890f18e51d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1463,6 +1472,17 @@
                     "processors": "",
                     "groups": ";Car",
                     "action": "Fire Hose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e2e9ef4b-e2ed-4f21-b2b9-0b16658dcd50",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Switch Camera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

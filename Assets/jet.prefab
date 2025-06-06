@@ -1103,6 +1103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vrCamera: {fileID: 8047870575207364704}
   regularCamera: {fileID: 1578746879234975467}
+  switchCameraInput: {fileID: 5574611562451613577, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &7951102484412968592
 GameObject:
   m_ObjectHideFlags: 0
