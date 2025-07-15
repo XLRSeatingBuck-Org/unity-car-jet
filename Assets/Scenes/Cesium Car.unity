@@ -115594,13 +115594,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884480501}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.45871565, z: 0, w: 0.8885831}
+  m_LocalRotation: {x: 0, y: 0.5, z: 0, w: 0.8660254}
   m_LocalPosition: {x: 0, y: 3.4, z: -17.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1137133086}
-  m_LocalEulerAnglesHint: {x: 0, y: 54.60852, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 60, z: 0}
 --- !u!114 &884480503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115686,7 +115686,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 28.594534
+  field of view: 31.816969
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -151292,7 +151292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3251755977680612804, guid: 5762b67db25a2c145b982a1ce74251c3, type: 3}
       propertyPath: field of view
-      value: 28.594534
+      value: 31.816969
       objectReference: {fileID: 0}
     - target: {fileID: 3251755977680612804, guid: 5762b67db25a2c145b982a1ce74251c3, type: 3}
       propertyPath: m_FOVAxisMode
@@ -207715,13 +207715,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1530750405}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.4587157, z: 0, w: 0.8885831}
+  m_LocalRotation: {x: 0, y: -0.5, z: 0, w: 0.8660254}
   m_LocalPosition: {x: 0, y: 3.4, z: -17.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1137133086}
-  m_LocalEulerAnglesHint: {x: 0, y: -54.60852, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -60, z: 0}
 --- !u!114 &1530750407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207807,7 +207807,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 28.594534
+  field of view: 31.816969
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

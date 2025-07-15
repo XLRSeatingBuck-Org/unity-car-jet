@@ -240,7 +240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365860681}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000058827776, y: -0.7012989, z: -0.00001988425, w: 0.7128674}
+  m_LocalRotation: {x: -0.000058827776, y: -0.7012989, z: -0.000019884257, w: 0.7128674}
   m_LocalPosition: {x: 4833.3613, y: 6.6696734, z: 2465.6553}
   m_LocalScale: {x: 1.0000012, y: 1, z: 1.0000012}
   m_ConstrainProportionsScale: 0
@@ -263,19 +263,19 @@ MonoBehaviour:
   _detectTransformChanges: 1
   _localToGlobeFixedMatrix:
     c0:
-      x: 0.33646728449269075
-      y: 0.5102861176704113
-      z: 0.7914545527092597
+      x: 0.3364672844970254
+      y: 0.5102861176773855
+      z: 0.7914545527029206
       w: 0
     c1:
-      x: -0.41779718594052867
-      y: -0.6723196641226383
-      z: 0.6110906484754932
+      x: -0.4177971859284257
+      y: -0.6723196641228176
+      z: 0.6110906484835705
       w: 0
     c2:
-      x: -0.8439415336001256
-      y: 0.5362794959947046
-      z: 0.013017467709776308
+      x: -0.8439415336043894
+      y: 0.5362794959878439
+      z: 0.013017467716013096
       w: 0
     c3:
       x: -2663728.3670271426
@@ -2176,8 +2176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4054d6bcfa6716478c4bc4a51c924ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera1: {fileID: 864763276}
-  camera2: {fileID: 2108868071}
 --- !u!1 &1494614988
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,7 +2369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000019884252
+      value: -0.000019884255
       objectReference: {fileID: 0}
     - target: {fileID: 8857920072838978533, guid: 3e4a8a39360547e40969b5c028be4f41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2449,19 +2447,19 @@ MonoBehaviour:
   _detectTransformChanges: 1
   _localToGlobeFixedMatrix:
     c0:
-      x: 0.3364668833939932
-      y: 0.5102855093644245
-      z: 0.7914536092214502
+      x: 0.3364668833972441
+      y: 0.5102855093696551
+      z: 0.791453609216696
       w: 0
     c1:
-      x: -0.4177971859375029
-      y: -0.6723196641226832
-      z: 0.6110906484775125
+      x: -0.4177971859284257
+      y: -0.6723196641228176
+      z: 0.6110906484835705
       w: 0
     c2:
-      x: -0.8439405275456844
-      y: 0.5362788566987743
-      z: 0.01301745219332323
+      x: -0.8439405275488822
+      y: 0.5362788566936287
+      z: 0.013017452198000814
       w: 0
     c3:
       x: -2663728.3670271426
